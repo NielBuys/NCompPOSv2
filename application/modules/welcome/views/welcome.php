@@ -15,7 +15,7 @@
     <!-- Use the .htaccess and remove these lines to avoid edge case issues -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>InvoicePlane</title>
+    <title>NCompPOS</title>
 
     <!-- Mobile viewport optimized: j.mp/bplateviewport -->
     <meta name="viewport" content="width=device-width">
@@ -30,9 +30,9 @@
 <div class="container">
 
     <div id="content">
-        <div id="logo"><span>InvoicePlane</span></div>
+        <div id="logo"><span>NCompPOS</span></div>
         <p class="alert alert-info text-center">
-            Please install InvoicePlane.<br/>
+            Please install NCompPOS.<br/>
             <span class="text-muted">Bitte installiere InvoicePlane.</span><br/>
             <span class="text-muted">S'il vous plaît installer InvoicePlane</span><br/>
             <span class="text-muted">Por favor, instale InvoicePlane</span><br/>
