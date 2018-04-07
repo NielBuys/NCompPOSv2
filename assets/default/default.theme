@@ -1,5 +1,5 @@
-TITLE='InvoicePlane Default'
-DESCRIPTION='The default InvoicePlane theme.'
+TITLE='Default'
+DESCRIPTION='The NCompPOS default theme.'
 AUTHOR='InvoicePlane Developers & Contributors'
 AUTHOR_WEBSITE='https://invoiceplane.com/'
 LICENSE='MIT'
