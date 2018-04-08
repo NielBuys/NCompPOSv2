@@ -28,12 +28,12 @@
     <link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/core/img/favicon.png">
 
     <link rel="stylesheet"
-          href="<?php echo base_url(); ?>assets/<?php echo get_setting('system_theme', 'invoiceplane'); ?>/css/style.css">
+          href="<?php echo base_url(); ?>assets/<?php echo get_setting('system_theme', 'default'); ?>/css/style.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/core/css/custom.css">
 
     <?php if (get_setting('monospace_amounts') == 1) { ?>
         <link rel="stylesheet"
-              href="<?php echo base_url(); ?>assets/<?php echo get_setting('system_theme', 'invoiceplane'); ?>/css/monospace.css">
+              href="<?php echo base_url(); ?>assets/<?php echo get_setting('system_theme', 'default'); ?>/css/monospace.css">
     <?php } ?>
 
     <!--[if lt IE 9]>

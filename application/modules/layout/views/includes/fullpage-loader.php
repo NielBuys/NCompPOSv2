@@ -3,7 +3,7 @@
         <i id="loader-icon" class="fa fa-cog fa-spin"></i>
         <div id="loader-error" style="display: none">
             <?php _trans('loading_error'); ?><br/>
-            <a href="https://wiki.invoiceplane.com/<?php _trans('cldr'); ?>/1.0/general/faq"
+            <a href="https://www.ncomp.co.za/index.php/ncomppos/help-v2"
                class="btn btn-primary btn-sm" target="_blank">
                 <i class="fa fa-support"></i> <?php _trans('loading_error_help'); ?>
             </a>
