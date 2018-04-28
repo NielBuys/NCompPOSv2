@@ -1,8 +1,8 @@
 {
-  "name": "invoiceplane",
+  "name": "NCompPOSv2",
   "version": "1.5.8",
-  "description": "InvoicePlane is a self-hosted open source application for managing your invoices, clients and payments",
-  "homepage": "https://invoiceplane.com",
+  "description": "Open source invoice solution",
+  "homepage": "https://www.ncomp.co.za",
   "license": "MIT",
   "type": "project",
   "repositories": [
