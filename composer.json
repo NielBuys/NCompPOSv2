@@ -1,22 +1,16 @@
 {
   "name": "NCompPOSv2",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Open source invoice solution",
   "homepage": "https://www.ncomp.co.za",
   "license": "MIT",
   "type": "project",
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/InvoicePlane/mpdf.git"
-    }
-  ],
   "require": {
     "phpmailer/phpmailer": "^6.0.3",
-    "mpdf/mpdf": "dev-master",
+    "mpdf/mpdf": "7.*",
     "vlucas/phpdotenv": "^2.4",
     "setasign/fpdi-fpdf": "^1.6.1",
-    "codeigniter/framework": "3.1.8",
+    "codeigniter/framework": "3.*",
     "omnipay/omnipay": "~2.0",
     "paragonie/random_compat": "^2.0"
   }

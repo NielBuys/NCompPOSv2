@@ -13,7 +13,7 @@ RUN \
   && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
   && docker-php-ext-install -j$(nproc) gd mcrypt mysqli recode xmlrpc
 
-# Copy InvoicePlane into public directory
+# Copy NCompPOSv2 into public directory
 COPY . /var/www/html
 
 # Enable .htaccess, set permissions, and enable Apache mod_rewrite
