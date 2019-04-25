@@ -1,6 +1,8 @@
 'use strict';
 module.exports = function (grunt) {
 
+    const sass = require('node-sass');
+
     // Load grunt tasks automatically
     require('load-grunt-tasks')(grunt);
 
@@ -18,6 +20,7 @@ module.exports = function (grunt) {
     grunt.config('sass', {
         dev: {
             options: {
+                implementation: sass,
                 outputStyle: 'extended',
                 sourceMap: true
             },
@@ -29,6 +32,7 @@ module.exports = function (grunt) {
         },
         build: {
             options: {
+                implementation: sass,
                 outputStyle: 'compressed'
             },
             files: grunt.file.expandMapping(['assets/**/sass/*.scss'], 'css', {
