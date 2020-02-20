@@ -8,7 +8,7 @@ Documentation will follow.
 For support you can create an issue on GitHub or fill in the form on our Website.
 https://www.ncomp.co.za/index.php/about-us/contact-us.
 
-#Installation
+# Installation
 1. Download the latest version from http://www.ncomp.co.za/index.php/ncomppos/download.
 2. Extract the package and copy all files to your webserver / webspace.
 3. Make a copy of the ipconfig.php.example file and rename this copy to ipconfig.php.
