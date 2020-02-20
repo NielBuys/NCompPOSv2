@@ -1,19 +1,14 @@
 # Contribution Information
 
-### Contribution to InvoicePlane
+### Contribution to NCompPOSv2
 
 Every help is welcome, you don't have to be a professional PHP developer or SQL database engineer.
 We appreciate any support with helping other users, translating the software or simply spreading
-the word. You can find more general information in our [community contribution guide](https://go.invoiceplane.com/contribution).
+the word
 
 If you have any questions regarding contribution please ask! Nothing is more frustrating for you
 and us than misunderstandings which may lead to large amounts of time required to solve the resulting
 problems.  
-We have a community forum and a Slack channel so please use them:
-
-  * [Community Forum](https://community.invoiceplane.com/)
-  * [Slack Channel](https://invoiceplane-slack.herokuapp.com/)
-
 
 ---
 
@@ -106,16 +101,11 @@ the PHP dependencies with the help of the `composer.json` file.
 
 To change the actual styling of the application or scripts you may have to install
 some other tools.
-Please notice that InvoicePlane has a unique theme system that splits up styles
-into core styles and theme styles. Please visit the [InvoicePlane Themes](https://github.com/InvoicePlane/InvoicePlane-Themes)
-repository for more information.
-This main repository ONLY manages core styles and scripts. If you want to develop a new
-theme please use the InvoicePlane Themes repository.
 
-  * InvoicePlane requires Node and NPM: [Install both](https://nodejs.org/en/download/)  
+  * NCompPOS requires Node and NPM: [Install both](https://nodejs.org/en/download/)  
     Make sure to use the latest LTS version which is version 8 at the moment.
   * Install Grunt globally by running `npm install -g grunt-cli`.
-  
+
 If you have prepared your machine, run `npm install` to install all dependencies.
 After that there are two commands available for development:
 
@@ -128,44 +118,3 @@ After that there are two commands available for development:
   * `grunt build` This command is used to compile all assets for the production use. It
                   also minifies all assets to make sure pages load faster. Normally this
                   command is not used for development.
-
-
----
-
-
-### Contributing Code
-
-**Read this carefully to prevent your pull request from being rejected!**
-
-1. Before you submit any code to the repository please take a look at the
-    [issue tracker](https://development.invoiceplane.com) and search for a
-     corresponding issue! There should be no changes to the code without an issue
-     filed.
-
-    * If an issue exists and someone is working on it, please contact this person.
-    * If an issue exists and no one is working on it, assign it to yourself or write a comment.
-    * If no issue exists, contact the InvoicePlane team via the forums or the Slack channel first!
-      We would like to discuss what you want to do before you start to work.
-
-2. ALWAYS reference the issue ID (e.g. IP-317) in all commits you create for this issue.
-
-3. BEFORE you create a pull request, rebase from the corresponding branch. This is very important
-   to make sure that there are no duplicate commits and you do not revert any previous changes.
-
-    * Add the development branch as a remote:  
-      `git remote add ip git@github.com:InvoicePlane/InvoicePlane.git`
-    * Do a rebase with the following command:  
-      `git pull --rebase ip [branch]`  
-      Where `ip` is the name of the remote and `[branch]` the corresponding branch.
-    * Solve all conflicts and check if your code is still working.
-
-4. Submit the pull request, reference the issue ID in the title and add a meaningful description.
-
-Please ask questions related to this process if you are unsure. Asking before doing anything
-will save both your and our time.
-
-
----
-
-> _The name 'InvoicePlane' and the InvoicePlane logo are both copyright by Kovah.de and InvoicePlane.com
-and their usage is restricted! For more information visit invoiceplane.com/license-copyright_

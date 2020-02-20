@@ -1,9 +1,9 @@
 {
   "name": "NCompPOSv2",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Open source invoice solution",
   "homepage": "https://www.ncomp.co.za",
-  "license": "MIT",
+  "license": "LGPL-3.0-or-later",
   "type": "project",
   "require": {
     "phpmailer/phpmailer": "^6.0.3",
