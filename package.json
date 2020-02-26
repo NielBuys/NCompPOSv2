@@ -8,7 +8,7 @@
     "url": "git+https://github.com/NielBuys/NCompPOSv2.git"
   },
   "author": "Niel Buys",
-  "license": "GPL3.0+",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://www.ncomp.co.za"
   },
