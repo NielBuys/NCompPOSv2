@@ -1,6 +1,6 @@
 {
   "name": "NCompPOSv2",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Open source invoice solution",
   "homepage": "https://www.ncomp.co.za",
   "license": "LGPL-3.0-or-later",
@@ -11,7 +11,7 @@
     "vlucas/phpdotenv": "^2.4",
     "setasign/fpdi-fpdf": "^1.6.1",
     "codeigniter/framework": "3.*",
-    "omnipay/omnipay": "~2.0",
+    "league/omnipay": "~2.0",
     "paragonie/random_compat": "^2.0"
   }
 }

@@ -12,60 +12,27 @@ problems.
 
 ---
 
-
 ### Contents
 
-  * Development Guidelines
   * Versioning and Git Branches
   * Getting Started with Development
   * Contributing Code
 
-
 ---
-
-
-### Development Guidelines
-
-To make sure the code is readable and well structured please follow these guidelines.
-We do highly recommend using the [PhpStorm](https://www.jetbrains.com/phpstorm/) IDE
-as it natively supports the correct code formatting.
-
-#### PHP
-All code is formatted according to PSR-1 and PSR-2. These two standards assure that
-the whole code looks the same and is well formatted.  
-Variables and functions are always declared in the `$under_score` formatting, not
-`$camelCase`. Arrays are always specified in the short syntax: `['item', 'item2']`.
-
-See [PSR-1](https://www.php-fig.org/psr/psr-1/) and [PSR-2](https://www.php-fig.org/psr/psr-2/)
-
-#### JavaScript
-Use the Standard JavaScript Code Formatting (https://standardjs.com/) with the only
-change that we do use semicolons.
-
-#### CSS
-All CSS styles are written in [Sass](https://sass-lang.com/) in the SCSS style. You
-do not need to specify any styles with vendor prefixes like `-moz-box-shadow` as
-they are added automatically in the compilation process!
-
-
----
-
 
 ### Versioning and Git Branches
-
-We do use [SemVer](https://semver.org/) to version InvoicePlane which means:
 
   * Bugfixes or smaller improvements go into minor versions like `v1.3.2` or `v1.5.6`.
   * New features or larger improvements go into feature versions like `v1.4.0` or `v1.6.0`.
 
 
-The InvoicePlane branch structure consists of four different branch types
+The NCompPOSv2 branch structure consists of four different branch types
 
   * `master`  This branch contains the current stable version of the application.
               There will never be any development activity on this branch so please refrain
               from using it for pull requests.
 
-  * `1.5`     Branches that contain only a feature version of InvoicePlane, like `1.3`
+  * `1.5`     Branches that contain only a feature version of NCompPOSv2, like `1.3`
               or `1.5` are archive branches that contain the last stable release of that
               specific version.
 
@@ -79,9 +46,7 @@ The InvoicePlane branch structure consists of four different branch types
               not fit into another branch. Only push code to these branches if you are
               requested to do so.
 
-
 ---
-
 
 ### Getting Started with Development
 
@@ -92,7 +57,7 @@ If you just want to change PHP code or HTML files, you just need to have
 the PHP dependencies with the help of the `composer.json` file.
 
   1. Run `composer install` to install all dependencies.
-  2. Follow the basic installation guide in the README.md or the InvoicePlane Wiki.
+  2. Follow the basic installation guide in the README.md.
   3. Make sure your editor or IDE has the correct code formatting settings set.
   4. That's it. You are good to go.
 

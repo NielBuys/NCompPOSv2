@@ -1,7 +1,7 @@
 FROM php:5.6-apache
 
 # Install and enable PHP extensions
-# https://wiki.invoiceplane.com/en/1.0/getting-started/requirements
+
 RUN \
   apt-get update && apt-get install -y \
     libfreetype6-dev \
