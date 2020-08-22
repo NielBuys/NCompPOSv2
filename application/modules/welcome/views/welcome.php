@@ -32,17 +32,14 @@
     <div id="content">
         <div id="logo"><span>NCompPOS</span></div>
         <p class="alert alert-info text-center">
-            Please install NCompPOS.<br/>
-            <span class="text-muted">Bitte installiere InvoicePlane.</span><br/>
-            <span class="text-muted">S'il vous plaît installer InvoicePlane</span><br/>
-            <span class="text-muted">Por favor, instale InvoicePlane</span><br/>
+            Please install NCompPOS.
         </p>
 
         <div class="btn-group btn-group-justified">
             <a href="<?php echo site_url('setup'); ?>" class="btn btn-success">
                 <i class="fa fa-cogs"></i> Setup
             </a>
-            <a href="https://wiki.invoiceplane.com/" class="btn btn-info">
+            <a href="https://www.ncomp.co.za/index.php/ncomppos/help-v2" class="btn btn-info">
                 <i class="fa fa-info-circle"></i> Get Help
             </a>
         </div>
