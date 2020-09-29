@@ -14,3 +14,14 @@ https://www.ncomp.co.za/index.php/about-us/contact-us.
 3. Make a copy of the ipconfig.php.example file and rename this copy to ipconfig.php.
 4. Open the ipconfig.php file and set your URL like specified in the file.
 5. Open http://your-ncomppos-domain.com/index.php/setup and follow the instructions.
+
+# Setup of recurring invoices
+You must create a CRON job or a scheduled task that opens the following URL once per day.
+
+http://your-domain.com/invoices/cron/recur/your-cron-key-here
+
+or
+
+http://your-domain.com/index.php/invoices/cron/recur/your-cron-key-here
+
+The "your-cron-key-here" must be replaced with the CRON Key in System Settings.
