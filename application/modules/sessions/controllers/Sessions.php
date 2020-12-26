@@ -32,44 +32,52 @@ class Sessions extends Base_Controller
             $this->load->helper('cookie');
             if (env('RECAPTCHA_SITEKEY') != '')
             {
-                if (is_null(get_cookie('CaptchaCookie'))) 
+                if (is_null(get_cookie('CaptchaCookie')))
                 {
                     $testCaptcha = true;
                 }
                 elseif (password_verify ( get_setting('cron_key') , get_cookie('CaptchaCookie') ) === false)
                 {
-                    $testCaptcha = true;                
+                    $testCaptcha = true;
                 }
                 else
                 {
-                    $testCaptcha = false;                    
+                    $testCaptcha = false;
                 }
-                if ($testCaptcha) 
+                if ($testCaptcha)
                 {
                     $captcha = $this->input->post('g-recaptcha-response');
-	               $ip = $_SERVER['REMOTE_ADDR'];
-	               $secretkey = env('RECAPTCHA_SECRETKEY');					
-	               $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretkey."&response=".$captcha."&remoteip=".$ip);
-	               $responseKeys = json_decode($response,true);	     
+                    $ip = $_SERVER['REMOTE_ADDR'];
+	               $secretkey = env('RECAPTCHA_SECRETKEY');
+//	               $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretkey."&response=".$captcha."&remoteip=".$ip);
+
+                   $url = "https://www.google.com/recaptcha/api/siteverify?secret=".$secretkey."&response=".$captcha."&remoteip=".$ip;
+                   $ch = curl_init();
+                   curl_setopt($ch, CURLOPT_URL, $url);
+                   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                   $response = curl_exec($ch);
+                   curl_close($ch);
+
+	               $responseKeys = json_decode($response,true);
 
 	               if(intval($responseKeys["success"]) !== 1) {
 	                   $this->session->set_flashdata('alert_error', trans('loginalert_captcha'));
                         redirect('sessions/login');
 	               } else {
                         $cookie = array(
-                            'name'   => 'CaptchaCookie', 
+                            'name'   => 'CaptchaCookie',
                             'value'  => password_hash(get_setting('cron_key'), PASSWORD_DEFAULT),
                             'expire' => '7890000',
                             'domain' => $_SERVER['SERVER_NAME'],
                             'path'   => '/',
                             'secure' => false
                         );
-                        set_cookie($cookie);	        	
+                        set_cookie($cookie);
                     }
                 }
             }
 /// end of recaptcha
-            
+
             $this->db->where('user_email', $this->input->post('email'));
             $query = $this->db->get('ip_users');
             $user = $query->row();
