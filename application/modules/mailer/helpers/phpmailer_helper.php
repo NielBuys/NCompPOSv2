@@ -89,10 +89,12 @@ function phpmail_send(
 
     if (is_array($from)) {
         // This array should be address, name
-        $mail->setFrom($from[0], $from[1]);
+        $mail->setFrom(get_setting('smtp_mail_from'), $from[1]);
+        $mail->addReplyTo($from[0], $from[1]);
     } else {
         // This is just an address
-        $mail->setFrom($from);
+        $mail->setFrom(get_setting('smtp_mail_from'));
+        $mail->addReplyTo($from[0]);
     }
 
     // Allow multiple recipients delimited by comma or semicolon
