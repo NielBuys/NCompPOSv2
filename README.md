@@ -15,6 +15,13 @@ https://www.ncomp.co.za/index.php/about-us/contact-us.
 4. Open the ipconfig.php file and set your URL like specified in the file.
 5. Open http://your-ncomppos-domain.com/index.php/setup and follow the instructions.
 
+# Update
+1. Make sure you have backups of the webserver / webspace and DB
+2. Download the latest version from http://www.ncomp.co.za/index.php/ncomppos/download.
+3. Extract the package and copy all files to your webserver / webspace.
+4. Open http://your-ncomppos-domain.com/index.php/setup and follow the instructions to update the db.
+NOTE: Setup may be disabled in ipconfig.php you may have to enable it temporarily.
+
 # Setup of recurring invoices
 You must create a CRON job or a scheduled task that opens the following URL once per day.
 
