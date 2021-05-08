@@ -38,7 +38,6 @@
     "select2": "^4.0.13",
     "zxcvbn": "^4.4.2"
   },
-  "dependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }
