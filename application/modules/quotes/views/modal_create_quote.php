@@ -32,11 +32,11 @@
             // Posts the data to validate and create the quote;
             // will create the new client if necessary
             $.post("<?php echo site_url('quotes/ajax/create'); ?>", {
-                    client_id: $('#create_quote_client_id').val(),
-                    quote_date_created: $('#quote_date_created').val(),
-                    quote_password: $('#quote_password').val(),
+                    client_id: $('.modal-content #create_quote_client_id').val(),
+                    quote_date_created: $('.modal-content #quote_date_created').val(),
+                    quote_password: $('.modal-content #quote_password').val(),
                     user_id: '<?php echo $this->session->userdata('user_id'); ?>',
-                    invoice_group_id: $('#invoice_group_id').val()
+                    invoice_group_id: $('.modal-content #invoice_group_id').val()
                 },
                 function (data) {
                     <?php echo(IP_DEBUG ? 'console.log(data);' : ''); ?>

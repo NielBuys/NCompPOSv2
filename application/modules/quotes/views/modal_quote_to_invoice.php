@@ -10,12 +10,12 @@
         $('#quote_to_invoice_confirm').click(function () {
             $.post("<?php echo site_url('quotes/ajax/quote_to_invoice'); ?>", {
                     quote_id: <?php echo $quote_id; ?>,
-                    client_id: $('#client_id').val(),
-                    invoice_date_created: $('#invoice_date_created').val(),
+                    client_id: $('.modal-content #client_id').val(),
+                    invoice_date_created: $('.modal-content #invoice_date_created').val(),
                     invoice_time_created: '<?php echo date('H:i:s') ?>',
-                    invoice_group_id: $('#invoice_group_id').val(),
-                    invoice_password: $('#invoice_password').val(),
-                    user_id: $('#user_id').val()
+                    invoice_group_id: $('.modal-content #invoice_group_id').val(),
+                    invoice_password: $('.modal-content #invoice_password').val(),
+                    user_id: $('.modal-content #user_id').val()
                 },
                 function (data) {
                     <?php echo(IP_DEBUG ? 'console.log(data);' : ''); ?>

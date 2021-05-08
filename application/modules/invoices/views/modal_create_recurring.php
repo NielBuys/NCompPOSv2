@@ -16,9 +16,9 @@
         $('#create_recurring_confirm').click(function () {
             $.post("<?php echo site_url('invoices/ajax/create_recurring'); ?>", {
                     invoice_id: <?php echo $invoice_id; ?>,
-                    recur_start_date: $('#recur_start_date').val(),
-                    recur_end_date: $('#recur_end_date').val(),
-                    recur_frequency: $('#recur_frequency').val()
+                    recur_start_date: $('.modal-content #recur_start_date').val(),
+                    recur_end_date: $('.modal-content #recur_end_date').val(),
+                    recur_frequency: $('.modal-content #recur_frequency').val()
                 },
                 function (data) {
                     <?php echo(IP_DEBUG ? 'console.log(data);' : ''); ?>

@@ -12,13 +12,13 @@
         $('#copy_invoice_confirm').click(function () {
             $.post("<?php echo site_url('invoices/ajax/copy_invoice'); ?>", {
                     invoice_id: <?php echo $invoice_id; ?>,
-                    client_id: $('#client_id').val(),
-                    invoice_date_created: $('#invoice_date_created').val(),
-                    invoice_group_id: $('#invoice_group_id').val(),
-                    invoice_password: $('#invoice_password').val(),
+                    client_id: $('.modal-content #client_id').val(),
+                    invoice_date_created: $('.modal-content #invoice_date_created').val(),
+                    invoice_group_id: $('.modal-content #invoice_group_id').val(),
+                    invoice_password: $('.modal-content #invoice_password').val(),
                     invoice_time_created: '<?php echo date('H:i:s') ?>',
-                    user_id: $('#user_id').val(),
-                    payment_method: $('#payment_method').val()
+                    user_id: $('.modal-content #user_id').val(),
+                    payment_method: $('.modal-content #payment_method').val()
                 },
                 function (data) {
                     <?php echo(IP_DEBUG ? 'console.log(data);' : ''); ?>

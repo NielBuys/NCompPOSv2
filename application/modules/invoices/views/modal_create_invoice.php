@@ -32,13 +32,13 @@
             // Posts the data to validate and create the invoice;
             // will create the new client if necessar
             $.post("<?php echo site_url('invoices/ajax/create'); ?>", {
-                    client_id: $('#create_invoice_client_id').val(),
-                    invoice_date_created: $('#invoice_date_created').val(),
-                    invoice_group_id: $('#invoice_group_id').val(),
+                    client_id: $('.modal-content #create_invoice_client_id').val(),
+                    invoice_date_created: $('.modal-content #invoice_date_created').val(),
+                    invoice_group_id: $('.modal-content #invoice_group_id').val(),
                     invoice_time_created: '<?php echo date('H:i:s') ?>',
-                    invoice_password: $('#invoice_password').val(),
+                    invoice_password: $('.modal-content #invoice_password').val(),
                     user_id: '<?php echo $this->session->userdata('user_id'); ?>',
-                    payment_method: $('#payment_method_id').val()
+                    payment_method: $('.modal-content #payment_method_id').val()
                 },
                 function (data) {
                     <?php echo(IP_DEBUG ? 'console.log(data);' : ''); ?>

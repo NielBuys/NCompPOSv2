@@ -10,8 +10,8 @@
             // Posts the data to validate and create the invoice;
             // will create the new client if necessary
             $.post("<?php echo site_url('invoices/ajax/change_client'); ?>", {
-                    client_id: $('#change_client_id').val(),
-                    invoice_id: $('#invoice_id').val()
+                    client_id: $('.modal-content #change_client_id').val(),
+                    invoice_id: $('.modal-content #invoice_id').val()
                 },
                 function (data) {
                     <?php echo(IP_DEBUG ? 'console.log(data);' : ''); ?>

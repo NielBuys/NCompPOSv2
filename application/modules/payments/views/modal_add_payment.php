@@ -11,11 +11,11 @@
 
         $('#btn_modal_payment_submit').click(function () {
             $.post("<?php echo site_url('payments/ajax/add'); ?>", {
-                    invoice_id: $('#invoice_id').val(),
-                    payment_amount: $('#payment_amount').val(),
-                    payment_method_id: $('#payment_method_id').val(),
-                    payment_date: $('#payment_date').val(),
-                    payment_note: $('#payment_note').val()
+                    invoice_id: $('.modal-content #invoice_id').val(),
+                    payment_amount: $('.modal-content #payment_amount').val(),
+                    payment_method_id: $('.modal-content #payment_method_id').val(),
+                    payment_date: $('.modal-content #payment_date').val(),
+                    payment_note: $('.modal-content #payment_note').val()
                 },
                 function (data) {
                     <?php echo(IP_DEBUG ? 'console.log(data);' : ''); ?>
