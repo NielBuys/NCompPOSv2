@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c413c8c347ab3e27db3a54d638a03209",
+    "content-hash": "f0e72fc2cda47fa5a8bf3e1ec6a2cdd8",
     "packages": [
         {
             "name": "codeigniter/framework",
@@ -37,6 +37,13 @@
             ],
             "description": "The CodeIgniter framework",
             "homepage": "https://codeigniter.com",
+            "support": {
+                "forum": "http://forum.codeigniter.com/",
+                "issues": "https://github.com/bcit-ci/CodeIgniter/issues",
+                "slack": "https://codeigniterchat.slack.com",
+                "source": "https://github.com/bcit-ci/CodeIgniter",
+                "wiki": "https://github.com/bcit-ci/CodeIgniter/wiki"
+            },
             "time": "2019-09-19T12:08:45+00:00"
         },
         {
@@ -132,6 +139,10 @@
                 "rest",
                 "web service"
             ],
+            "support": {
+                "issues": "https://github.com/guzzle/guzzle3/issues",
+                "source": "https://github.com/guzzle/guzzle3/tree/master"
+            },
             "abandoned": "guzzlehttp/guzzle",
             "time": "2015-03-18T18:23:50+00:00"
         },
@@ -245,6 +256,10 @@
                 "twocheckout",
                 "worldpay"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay/issues",
+                "source": "https://github.com/thephpleague/omnipay/tree/2.3.2"
+            },
             "time": "2014-12-10T13:55:00+00:00"
         },
         {
@@ -309,6 +324,17 @@
                 "php",
                 "utf-8"
             ],
+            "support": {
+                "docs": "http://mpdf.github.io",
+                "issues": "https://github.com/mpdf/mpdf/issues",
+                "source": "https://github.com/mpdf/mpdf"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/mpdf",
+                    "type": "custom"
+                }
+            ],
             "time": "2021-01-08T14:59:28+00:00"
         },
         {
@@ -356,6 +382,16 @@
                 "duplicate",
                 "object",
                 "object graph"
+            ],
+            "support": {
+                "issues": "https://github.com/myclabs/DeepCopy/issues",
+                "source": "https://github.com/myclabs/DeepCopy/tree/1.10.2"
+            },
+            "funding": [
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/myclabs/deep-copy",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-11-13T09:40:50+00:00"
         },
@@ -416,6 +452,10 @@
                 "payment",
                 "twocheckout"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-2checkout/issues",
+                "source": "https://github.com/thephpleague/omnipay-2checkout/tree/master"
+            },
             "time": "2014-09-17T00:35:37+00:00"
         },
         {
@@ -475,6 +515,10 @@
                 "pay",
                 "payment"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-authorizenet/issues",
+                "source": "https://github.com/thephpleague/omnipay-authorizenet/tree/master"
+            },
             "time": "2018-01-13T18:47:39+00:00"
         },
         {
@@ -532,6 +576,10 @@
                 "pay",
                 "payment"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-buckaroo/issues",
+                "source": "https://github.com/thephpleague/omnipay-buckaroo/tree/master"
+            },
             "time": "2017-05-30T09:43:42+00:00"
         },
         {
@@ -590,6 +638,10 @@
                 "pay",
                 "payment"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-cardsave/issues",
+                "source": "https://github.com/thephpleague/omnipay-cardsave/tree/master"
+            },
             "time": "2014-09-21T02:27:16+00:00"
         },
         {
@@ -647,6 +699,10 @@
                 "pay",
                 "payment"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-coinbase/issues",
+                "source": "https://github.com/thephpleague/omnipay-coinbase/tree/master"
+            },
             "time": "2015-03-06T05:35:39+00:00"
         },
         {
@@ -763,6 +819,10 @@
                 "payment",
                 "purchase"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-common/issues",
+                "source": "https://github.com/thephpleague/omnipay-common/tree/master"
+            },
             "time": "2015-03-30T14:34:46+00:00"
         },
         {
@@ -820,6 +880,10 @@
                 "pay",
                 "payment"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-dummy/issues",
+                "source": "https://github.com/thephpleague/omnipay-dummy/tree/v2.2.0"
+            },
             "time": "2018-04-17T09:57:18+00:00"
         },
         {
@@ -877,6 +941,10 @@
                 "pay",
                 "payment"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-eway/issues",
+                "source": "https://github.com/thephpleague/omnipay-eway/tree/master"
+            },
             "time": "2017-05-12T08:17:12+00:00"
         },
         {
@@ -935,6 +1003,10 @@
                 "pay",
                 "payment"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-firstdata/issues",
+                "source": "https://github.com/thephpleague/omnipay-firstdata/tree/master"
+            },
             "time": "2019-01-27T20:05:45+00:00"
         },
         {
@@ -993,6 +1065,10 @@
                 "pay",
                 "payment"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-gocardless/issues",
+                "source": "https://github.com/thephpleague/omnipay-gocardless/tree/master"
+            },
             "time": "2015-09-24T14:44:29+00:00"
         },
         {
@@ -1050,6 +1126,10 @@
                 "pay",
                 "payment"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-manual/issues",
+                "source": "https://github.com/thephpleague/omnipay-manual/tree/master"
+            },
             "time": "2016-12-28T03:02:15+00:00"
         },
         {
@@ -1108,6 +1188,10 @@
                 "pay",
                 "payment"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-migs/issues",
+                "source": "https://github.com/thephpleague/omnipay-migs/tree/master"
+            },
             "time": "2017-06-07T07:52:47+00:00"
         },
         {
@@ -1165,6 +1249,10 @@
                 "pay",
                 "payment"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-mollie/issues",
+                "source": "https://github.com/thephpleague/omnipay-mollie/tree/master"
+            },
             "time": "2016-10-11T09:44:09+00:00"
         },
         {
@@ -1223,6 +1311,10 @@
                 "pay",
                 "payment"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-multisafepay/issues",
+                "source": "https://github.com/thephpleague/omnipay-multisafepay/tree/master"
+            },
             "time": "2017-05-28T06:28:10+00:00"
         },
         {
@@ -1280,6 +1372,10 @@
                 "pay",
                 "payment"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-netaxept/issues",
+                "source": "https://github.com/thephpleague/omnipay-netaxept/tree/master"
+            },
             "time": "2018-05-14T08:46:15+00:00"
         },
         {
@@ -1337,6 +1433,10 @@
                 "pay",
                 "payment"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-netbanx/issues",
+                "source": "https://github.com/thephpleague/omnipay-netbanx/tree/master"
+            },
             "time": "2016-09-21T10:52:03+00:00"
         },
         {
@@ -1394,6 +1494,10 @@
                 "payfast",
                 "payment"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-payfast/issues",
+                "source": "https://github.com/thephpleague/omnipay-payfast/tree/master"
+            },
             "time": "2018-02-02T17:02:45+00:00"
         },
         {
@@ -1451,6 +1555,10 @@
                 "payflow",
                 "payment"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-payflow/issues",
+                "source": "https://github.com/thephpleague/omnipay-payflow/tree/master"
+            },
             "time": "2018-04-11T04:19:09+00:00"
         },
         {
@@ -1514,6 +1622,10 @@
                 "pxpay",
                 "pxpost"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-paymentexpress/issues",
+                "source": "https://github.com/thephpleague/omnipay-paymentexpress/tree/2.x"
+            },
             "time": "2020-06-05T07:06:48+00:00"
         },
         {
@@ -1572,6 +1684,10 @@
                 "paypal",
                 "purchase"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-paypal/issues",
+                "source": "https://github.com/thephpleague/omnipay-paypal/tree/master"
+            },
             "time": "2017-11-10T08:10:43+00:00"
         },
         {
@@ -1629,6 +1745,10 @@
                 "payment",
                 "pin"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-pin/issues",
+                "source": "https://github.com/thephpleague/omnipay-pin/tree/master"
+            },
             "time": "2016-03-25T18:06:33+00:00"
         },
         {
@@ -1688,6 +1808,10 @@
                 "sage pay",
                 "sagepay"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-sagepay/issues",
+                "source": "https://github.com/thephpleague/omnipay-sagepay/tree/master"
+            },
             "time": "2017-09-05T15:31:15+00:00"
         },
         {
@@ -1745,6 +1869,10 @@
                 "payment",
                 "securepay"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-securepay/issues",
+                "source": "https://github.com/thephpleague/omnipay-securepay/tree/2.2.0"
+            },
             "time": "2018-05-25T07:49:11+00:00"
         },
         {
@@ -1802,6 +1930,10 @@
                 "payment",
                 "stripe"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-stripe/issues",
+                "source": "https://github.com/thephpleague/omnipay-stripe/tree/master"
+            },
             "time": "2017-07-14T09:22:01+00:00"
         },
         {
@@ -1859,6 +1991,10 @@
                 "payment",
                 "targetpay"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-targetpay/issues",
+                "source": "https://github.com/thephpleague/omnipay-targetpay/tree/master"
+            },
             "time": "2014-09-17T00:38:39+00:00"
         },
         {
@@ -1916,6 +2052,10 @@
                 "payment",
                 "worldpay"
             ],
+            "support": {
+                "issues": "https://github.com/thephpleague/omnipay-worldpay/issues",
+                "source": "https://github.com/thephpleague/omnipay-worldpay/tree/master"
+            },
             "time": "2017-10-23T08:31:50+00:00"
         },
         {
@@ -1965,6 +2105,11 @@
                 "pseudorandom",
                 "random"
             ],
+            "support": {
+                "email": "info@paragonie.com",
+                "issues": "https://github.com/paragonie/random_compat/issues",
+                "source": "https://github.com/paragonie/random_compat"
+            },
             "time": "2021-04-17T09:33:01+00:00"
         },
         {
@@ -2031,6 +2176,16 @@
                 }
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
+            "support": {
+                "issues": "https://github.com/PHPMailer/PHPMailer/issues",
+                "source": "https://github.com/PHPMailer/PHPMailer/tree/v6.4.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/Synchro",
+                    "type": "github"
+                }
+            ],
             "time": "2021-04-29T12:25:04+00:00"
         },
         {
@@ -2078,6 +2233,9 @@
                 "psr",
                 "psr-3"
             ],
+            "support": {
+                "source": "https://github.com/php-fig/log/tree/1.1.4"
+            },
             "time": "2021-05-03T11:20:27+00:00"
         },
         {
@@ -2121,6 +2279,9 @@
                 "fpdf",
                 "pdf"
             ],
+            "support": {
+                "source": "https://github.com/Setasign/FPDF/tree/1.8.3"
+            },
             "time": "2021-04-20T09:49:57+00:00"
         },
         {
@@ -2183,6 +2344,16 @@
                 "fpdi",
                 "pdf"
             ],
+            "support": {
+                "issues": "https://github.com/Setasign/FPDI/issues",
+                "source": "https://github.com/Setasign/FPDI/tree/v2.3.6"
+            },
+            "funding": [
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/setasign/fpdi",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2021-02-11T11:37:01+00:00"
         },
         {
@@ -2222,6 +2393,9 @@
                 "fpdi",
                 "pdf"
             ],
+            "support": {
+                "source": "https://github.com/Setasign/FPDI-FPDF/tree/v2.3.0"
+            },
             "abandoned": true,
             "time": "2020-02-19T12:21:53+00:00"
         },
@@ -2283,6 +2457,9 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/event-dispatcher/tree/v2.8.50"
+            },
             "time": "2018-11-21T14:20:20+00:00"
         },
         {
@@ -2338,6 +2515,9 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/http-foundation/tree/2.8"
+            },
             "time": "2019-11-12T12:34:41+00:00"
         },
         {
@@ -2399,6 +2579,23 @@
                 "ctype",
                 "polyfill",
                 "portable"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.22.1"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
             ],
             "time": "2021-01-07T16:49:33+00:00"
         },
@@ -2463,6 +2660,23 @@
                 "portable",
                 "shim"
             ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.22.1"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2021-01-22T09:19:47+00:00"
         },
         {
@@ -2514,6 +2728,23 @@
                 "portable",
                 "shim"
             ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php54/tree/v1.20.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
@@ -2564,6 +2795,23 @@
                 "polyfill",
                 "portable",
                 "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php55/tree/v1.20.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-10-23T14:02:19+00:00"
         },
@@ -2627,6 +2875,20 @@
                 "env",
                 "environment"
             ],
+            "support": {
+                "issues": "https://github.com/vlucas/phpdotenv/issues",
+                "source": "https://github.com/vlucas/phpdotenv/tree/v2.6.7"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/vlucas/phpdotenv",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2021-01-20T14:39:13+00:00"
         }
     ],
@@ -2637,5 +2899,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
 }
