@@ -71,7 +71,12 @@ function email_invoice(
     $bcc = parse_template($db_invoice, $bcc);
     $from = array(parse_template($db_invoice, $from[0]), parse_template($db_invoice, $from[1]));
 
-    $message = (empty($message) ? ' ' : $message);
+    if (empty($message))
+    {
+        $CI->session->set_flashdata('alert_error', 'No Email body');
+        return false;
+    }
+//    $message = (empty($message) ? ' ' : $message);
 
     return phpmail_send($from, $to, $subject, $message, $invoice, $cc, $bcc, $attachments);
 }
@@ -117,7 +122,12 @@ function email_quote(
     $bcc = parse_template($db_quote, $bcc);
     $from = array(parse_template($db_quote, $from[0]), parse_template($db_quote, $from[1]));
 
-    $message = (empty($message) ? ' ' : $message);
+    if (empty($message))
+    {
+        $CI->session->set_flashdata('alert_error', 'No Email body');
+        return false;
+    }
+//    $message = (empty($message) ? ' ' : $message);
 
     return phpmail_send($from, $to, $subject, $message, $quote, $cc, $bcc, $attachments);
 }
