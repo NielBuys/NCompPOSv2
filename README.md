@@ -1,5 +1,7 @@
 # NCompPOS v2
 
+Invoicing solution for small business. (Stock handling is still excluded from release. It will follow)
+
 Rewrite of the project started with invoiceplane project code as base.
 
 Documentation will follow.
