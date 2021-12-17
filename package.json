@@ -1,6 +1,6 @@
 {
   "name": "ncompposv2",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "Open source invoice solution",
   "main": "index.js",
   "repository": {
