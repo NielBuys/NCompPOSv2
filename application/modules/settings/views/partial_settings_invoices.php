@@ -2,6 +2,68 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
+            <?php _trans('default_invoice_quote_details'); ?>
+        </div>
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+
+                    <div class="form-group">
+                        <label for="settings[invoice_quote_name]">
+                            <?php _trans('invoice_quote_name'); ?>
+                        </label>
+                        <input type="text" name="settings[invoice_quote_name]" id="settings[invoice_quote_name]"
+                               class="form-control"
+                               value="<?php echo get_setting('invoice_quote_name', '', true); ?>">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="settings[invoice_quote_vat_id]">
+                            <?php _trans('invoice_quote_vat_id'); ?>
+                        </label>
+                        <input type="text" name="settings[invoice_quote_vat_id]" id="settings[invoice_quote_vat_id]"
+                               class="form-control"
+                               value="<?php echo get_setting('invoice_quote_vat_id', '', true); ?>">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="settings[invoice_quote_tax_code]">
+                            <?php _trans('invoice_quote_tax_code'); ?>
+                        </label>
+                        <input type="text" name="settings[invoice_quote_tax_code]" id="settings[invoice_quote_tax_code]"
+                               class="form-control"
+                               value="<?php echo get_setting('invoice_quote_tax_code', '', true); ?>">
+                    </div>
+
+                </div>
+                <div class="col-xs-12 col-md-6">
+
+
+
+                    <div class="form-group">
+                        <label for="settings[generate_invoice_number_for_draft]">
+                            <?php _trans('generate_invoice_number_for_draft'); ?>
+                        </label>
+                        <select name="settings[generate_invoice_number_for_draft]" class="form-control simple-select"
+                                id="settings[generate_invoice_number_for_draft]">
+                            <option value="0">
+                                <?php _trans('no'); ?>
+                            </option>
+                            <option value="1" <?php check_select(get_setting('generate_invoice_number_for_draft'), '1'); ?>>
+                                <?php _trans('yes'); ?>
+                            </option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
             <?php _trans('invoices'); ?>
         </div>
         <div class="panel-body">
