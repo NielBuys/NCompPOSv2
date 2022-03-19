@@ -58,52 +58,43 @@
 
     </div>
     <div id="company">
-        <div><b><?php 
-            if ($quote->user_company == '')
-            {
-                $displayname = $quote->user_name;
-            }
-            else
-            {
-                $displayname = $quote->user_company;
-            }
-            _htmlsc($displayname); ?></b></div>
-        <?php if ($quote->user_vat_id) {
-            echo '<div>' . trans('vat_id_short') . ': ' . $quote->user_vat_id . '</div>';
+        <div><b><?php echo htmlsc(get_setting('invoice_quote_name', null)); ?></b></div>
+        <?php if (get_setting('invoice_quote_vat_id', null)) {
+            echo '<div>' . trans('vat_id_short') . ': ' . get_setting('invoice_quote_vat_id', null) . '</div>';
         }
-        if ($quote->user_tax_code) {
-            echo '<div>' . trans('tax_code_short') . ': ' . $quote->user_tax_code . '</div>';
+        if (get_setting('invoice_quote_tax_code', null)) {
+            echo '<div>' . trans('tax_code_short') . ': ' . get_setting('invoice_quote_tax_code', null) . '</div>';
         }
-        if ($quote->user_address_1) {
-            echo '<div>' . htmlsc($quote->user_address_1) . '</div>';
+        if (get_setting('invoice_quote_address_1', null)) {
+            echo '<div>' . htmlsc(get_setting('invoice_quote_address_1', null)) . '</div>';
         }
-        if ($quote->user_address_2) {
-            echo '<div>' . htmlsc($quote->user_address_2) . '</div>';
+        if (get_setting('invoice_quote_address_2', null)) {
+            echo '<div>' . htmlsc(get_setting('invoice_quote_address_2', null)) . '</div>';
         }
-        if ($quote->user_city || $quote->user_state || $quote->user_zip) {
+        if (get_setting('invoice_quote_city', null) || get_setting('invoice_quote_state', null) || get_setting('invoice_quote_zip', null)) {
             echo '<div>';
-            if ($quote->user_city) {
-                echo htmlsc($quote->user_city) . ' ';
+            if (get_setting('invoice_quote_city', null)) {
+                echo htmlsc(get_setting('invoice_quote_city', null)) . ' ';
             }
-            if ($quote->user_state) {
-                echo htmlsc($quote->user_state) . ' ';
+            if (get_setting('invoice_quote_state', null)) {
+                echo htmlsc(get_setting('invoice_quote_state', null)) . ' ';
             }
-            if ($quote->user_zip) {
-                echo htmlsc($quote->user_zip);
+            if (get_setting('invoice_quote_zip', null)) {
+                echo htmlsc(get_setting('invoice_quote_zip', null));
             }
             echo '</div>';
         }
-        if ($quote->user_country) {
-            echo '<div>' . get_country_name(trans('cldr'), $quote->user_country) . '</div>';
+        if (get_setting('invoice_quote_country', null)) {
+            echo '<div>' . get_country_name(trans('cldr'), get_setting('invoice_quote_country', null)) . '</div>';
         }
 
         echo '<br/>';
 
-        if ($quote->user_phone) {
-            echo '<div>' . trans('phone_abbr') . ': ' . htmlsc($quote->user_phone) . '</div>';
+        if (get_setting('invoice_quote_phone', null)) {
+            echo '<div>' . trans('phone_abbr') . ': ' . htmlsc(get_setting('invoice_quote_phone', null)) . '</div>';
         }
-        if ($quote->user_fax) {
-            echo '<div>' . trans('fax_abbr') . ': ' . htmlsc($quote->user_fax) . '</div>';
+        if (get_setting('invoice_quote_email', null)) {
+            echo '<div>' . trans('email_abbr') . ': ' . htmlsc(get_setting('invoice_quote_email', null)) . '</div>';
         }
         ?>
     </div>

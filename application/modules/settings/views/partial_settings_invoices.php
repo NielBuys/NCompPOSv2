@@ -11,7 +11,7 @@
 
                     <div class="form-group">
                         <label for="settings[invoice_quote_name]">
-                            <?php _trans('invoice_quote_name'); ?>
+                            <?php _trans('name'); ?>
                         </label>
                         <input type="text" name="settings[invoice_quote_name]" id="settings[invoice_quote_name]"
                                class="form-control"
@@ -20,7 +20,7 @@
 
                     <div class="form-group">
                         <label for="settings[invoice_quote_vat_id]">
-                            <?php _trans('invoice_quote_vat_id'); ?>
+                            <?php _trans('vat_id'); ?>
                         </label>
                         <input type="text" name="settings[invoice_quote_vat_id]" id="settings[invoice_quote_vat_id]"
                                class="form-control"
@@ -29,30 +29,84 @@
 
                     <div class="form-group">
                         <label for="settings[invoice_quote_tax_code]">
-                            <?php _trans('invoice_quote_tax_code'); ?>
+                            <?php _trans('tax_code'); ?>
                         </label>
                         <input type="text" name="settings[invoice_quote_tax_code]" id="settings[invoice_quote_tax_code]"
                                class="form-control"
                                value="<?php echo get_setting('invoice_quote_tax_code', '', true); ?>">
                     </div>
 
+                    <div class="form-group">
+                        <label for="settings[invoice_quote_phone]">
+                            <?php _trans('phone_number'); ?>
+                        </label>
+                        <input type="text" name="settings[invoice_quote_phone]" id="settings[invoice_quote_phone]" class="form-control"
+                               value="<?php echo get_setting('invoice_quote_phone', '', true); ?>">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="settings[invoice_quote_email]">
+                            <?php _trans('email_address'); ?>
+                        </label>
+                        <input type="text" name="settings[invoice_quote_email]" id="settings[invoice_quote_email]" class="form-control"
+                               value="<?php echo get_setting('invoice_quote_email', '', true); ?>">
+                    </div>
+
                 </div>
                 <div class="col-xs-12 col-md-6">
 
-
+                    <div class="form-group">
+                        <label for="settings[invoice_quote_address_1]">
+                            <?php _trans('street_address'); ?>
+                        </label>
+                        <input type="text" name="settings[invoice_quote_address_1]" id="settings[invoice_quote_address_1]" class="form-control"
+                               value="<?php echo get_setting('invoice_quote_address_1', '', true); ?>">
+                    </div>
 
                     <div class="form-group">
-                        <label for="settings[generate_invoice_number_for_draft]">
-                            <?php _trans('generate_invoice_number_for_draft'); ?>
+                        <label for="settings[invoice_quote_address_2]">
+                            <?php _trans('street_address_2'); ?>
                         </label>
-                        <select name="settings[generate_invoice_number_for_draft]" class="form-control simple-select"
-                                id="settings[generate_invoice_number_for_draft]">
-                            <option value="0">
-                                <?php _trans('no'); ?>
-                            </option>
-                            <option value="1" <?php check_select(get_setting('generate_invoice_number_for_draft'), '1'); ?>>
-                                <?php _trans('yes'); ?>
-                            </option>
+                        <input type="text" name="settings[invoice_quote_address_2]" id="settings[invoice_quote_address_2]" class="form-control"
+                               value="<?php echo get_setting('invoice_quote_address_2', '', true); ?>">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="settings[invoice_quote_city]">
+                            <?php _trans('city'); ?>
+                        </label>
+                        <input type="text" name="settings[invoice_quote_city]" id="settings[invoice_quote_city]" class="form-control"
+                               value="<?php echo get_setting('invoice_quote_city', '', true); ?>">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="settings[invoice_quote_state]">
+                            <?php _trans('state'); ?>
+                        </label>
+                        <input type="text" name="settings[invoice_quote_state]" id="settings[invoice_quote_state]" class="form-control"
+                               value="<?php echo get_setting('invoice_quote_state', '', true); ?>">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="settings[invoice_quote_zip]">
+                            <?php _trans('zip_code'); ?>
+                        </label>
+                        <input type="text" name="settings[invoice_quote_zip]" id="settings[invoice_quote_zip]" class="form-control"
+                               value="<?php echo get_setting('invoice_quote_zip', '', true); ?>">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="settings[invoice_quote_country]">
+                            <?php _trans('country'); ?>
+                        </label>
+                        <select name="settings[invoice_quote_country]" id="settings[invoice_quote_country]"
+                                class="form-control simple-select">
+                            <option value=""><?php _trans('none'); ?></option>
+                            <?php foreach ($countries as $cldr => $country) { ?>
+                                <option value="<?php echo $cldr; ?>" <?php check_select(get_setting('invoice_quote_country'), $cldr); ?>>
+                                    <?php echo $country ?>
+                                </option>
+                            <?php } ?>
                         </select>
                     </div>
 

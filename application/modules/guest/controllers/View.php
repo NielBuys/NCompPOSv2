@@ -25,6 +25,7 @@ class View extends Base_Controller
         }
 
         $this->load->model('invoices/mdl_invoices');
+        $this->load->helper('country');
 
         $invoice = $this->mdl_invoices->guest_visible()->where('invoice_url_key', $invoice_url_key)->get();
 
@@ -159,6 +160,7 @@ class View extends Base_Controller
         }
 
         $this->load->model('quotes/mdl_quotes');
+        $this->load->helper('country');
 
         $quote = $this->mdl_quotes->guest_visible()->where('quote_url_key', $quote_url_key)->get();
 

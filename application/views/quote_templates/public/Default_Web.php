@@ -67,40 +67,37 @@
             <div class="row">
                 <div class="col-xs-12 col-md-6 col-lg-5">
 
-                    <h4><?php 
-                        if ($quote->user_company == '')
-                        {
-                            $displayname = $quote->user_name;
-                        }
-                        else
-                        {
-                            $displayname = $quote->user_company;
-                        }                        
-                        _htmlsc($displayname); ?></h4>
-                    <p><?php if ($quote->user_vat_id) {
-                            echo lang("vat_id_short") . ": " . $quote->user_vat_id . '<br>';
+                    <h4><?php echo htmlsc(get_setting('invoice_quote_name', null)); ?></h4>
+                    <p><?php if (get_setting('invoice_quote_vat_id', null)) {
+                            echo lang("vat_id_short") . ": " . get_setting('invoice_quote_vat_id', null) . '<br>';
                         } ?>
-                        <?php if ($quote->user_tax_code) {
-                            echo lang("tax_code_short") . ": " . $quote->user_tax_code . '<br>';
+                        <?php if (get_setting('invoice_quote_tax_code', null)) {
+                            echo lang("tax_code_short") . ": " . get_setting('invoice_quote_tax_code', null) . '<br>';
                         } ?>
-                        <?php if ($quote->user_address_1) {
-                            echo htmlsc($quote->user_address_1) . '<br>';
+                        <?php if (get_setting('invoice_quote_address_1', null)) {
+                            echo htmlsc(get_setting('invoice_quote_address_1', null)) . '<br>';
                         } ?>
-                        <?php if ($quote->user_address_2) {
-                            echo htmlsc($quote->user_address_2) . '<br>';
+                        <?php if (get_setting('invoice_quote_address_2', null)) {
+                            echo htmlsc(get_setting('invoice_quote_address_2', null)) . '<br>';
                         } ?>
-                        <?php if ($quote->user_city) {
-                            echo htmlsc($quote->user_city) . ' ';
+                        <?php if (get_setting('invoice_quote_city', null)) {
+                            echo htmlsc(get_setting('invoice_quote_city', null)) . ' ';
                         } ?>
-                        <?php if ($quote->user_state) {
-                            echo htmlsc($quote->user_state) . ' ';
+                        <?php if (get_setting('invoice_quote_state', null)) {
+                            echo htmlsc(get_setting('invoice_quote_state', null)) . ' ';
                         } ?>
-                        <?php if ($quote->user_zip) {
-                            echo htmlsc($quote->user_zip) . '<br>';
+                        <?php if (get_setting('invoice_quote_zip', null)) {
+                            echo htmlsc(get_setting('invoice_quote_zip', null));
                         } ?>
-                        <?php if ($quote->user_phone) { ?><?php echo trans('phone_abbr'); ?>: <?php echo htmlsc($quote->user_phone); ?>
+                        <?php if (get_setting('invoice_quote_city', null) || get_setting('invoice_quote_state', null) || get_setting('invoice_quote_zip', null)) {
+                            echo '<br>';
+                        } ?>
+                        <?php if (get_setting('invoice_quote_country', null)) {
+                            echo get_country_name(trans('cldr'), get_setting('invoice_quote_country', null)) . '<br>';
+                        } ?>
+                        <?php if (get_setting('invoice_quote_phone', null)) { ?><?php echo trans('phone_abbr'); ?>: <?php echo htmlsc(get_setting('invoice_quote_phone', null)); ?>
                             <br><?php } ?>
-                        <?php if ($quote->user_fax) { ?><?php echo trans('fax_abbr'); ?>: <?php echo htmlsc($quote->user_fax); ?><?php } ?>
+                        <?php if (get_setting('invoice_quote_email', null)) { ?><?php echo trans('email_abbr'); ?>: <?php echo htmlsc(get_setting('invoice_quote_email', null)); ?><?php } ?>
                     </p>
 
                 </div>
