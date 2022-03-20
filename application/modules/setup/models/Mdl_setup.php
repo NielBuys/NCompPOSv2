@@ -124,6 +124,7 @@ class Mdl_Setup extends CI_Model
             'public_invoice_template' => 'Default_Web',
             'public_quote_template' => 'Default_Web',
             'disable_sidebar' => 1,
+            'invoice_quote_name' => 'Set invoice detail in System settings',
         );
 
         foreach ($default_settings as $setting_key => $setting_value) {

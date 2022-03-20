@@ -62,21 +62,6 @@ class Mdl_Quotes extends Response_Model
     {
         $this->db->select("
             SQL_CALC_FOUND_ROWS
-            ip_users.user_name,
-			ip_users.user_company,
-			ip_users.user_address_1,
-			ip_users.user_address_2,
-			ip_users.user_city,
-			ip_users.user_state,
-			ip_users.user_zip,
-			ip_users.user_country,
-			ip_users.user_phone,
-			ip_users.user_fax,
-			ip_users.user_mobile,
-			ip_users.user_email,
-			ip_users.user_web,
-			ip_users.user_vat_id,
-			ip_users.user_tax_code,
 			ip_clients.*,
 			ip_quote_amounts.quote_amount_id,
 			IFnull(ip_quote_amounts.quote_item_subtotal, '0.00') AS quote_item_subtotal,
@@ -95,7 +80,6 @@ class Mdl_Quotes extends Response_Model
     public function default_join()
     {
         $this->db->join('ip_clients', 'ip_clients.client_id = ip_quotes.client_id');
-        $this->db->join('ip_users', 'ip_users.user_id = ip_quotes.user_id');
         $this->db->join('ip_quote_amounts', 'ip_quote_amounts.quote_id = ip_quotes.quote_id', 'left');
         $this->db->join('ip_invoices', 'ip_invoices.invoice_id = ip_quotes.invoice_id', 'left');
     }

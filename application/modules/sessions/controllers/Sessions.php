@@ -30,6 +30,7 @@ class Sessions extends Base_Controller
 
 /// reCaptcha
             $this->load->helper('cookie');
+            $testCaptcha = false;
             if (env('RECAPTCHA_SITEKEY') != '')
             {
                 if (is_null(get_cookie('CaptchaCookie')))
@@ -39,10 +40,6 @@ class Sessions extends Base_Controller
                 elseif (password_verify ( get_setting('cron_key') , get_cookie('CaptchaCookie') ) === false)
                 {
                     $testCaptcha = true;
-                }
-                else
-                {
-                    $testCaptcha = false;
                 }
                 if ($testCaptcha)
                 {
@@ -63,17 +60,7 @@ class Sessions extends Base_Controller
 	               if(intval($responseKeys["success"]) !== 1) {
 	                   $this->session->set_flashdata('alert_error', trans('loginalert_captcha'));
                         redirect('sessions/login');
-	               } else {
-                        $cookie = array(
-                            'name'   => 'CaptchaCookie',
-                            'value'  => password_hash(get_setting('cron_key'), PASSWORD_DEFAULT),
-                            'expire' => '7890000',
-                            'domain' => $_SERVER['SERVER_NAME'],
-                            'path'   => '/',
-                            'secure' => false
-                        );
-                        set_cookie($cookie);
-                    }
+	               }
                 }
             }
 /// end of recaptcha
@@ -95,6 +82,19 @@ class Sessions extends Base_Controller
                 } else {
 
                     if ($this->authenticate($this->input->post('email'), $this->input->post('password'))) {
+                        $this->session->set_flashdata('alert_error', '');
+                        if ($testCaptcha)
+                        {
+                            $cookie = array(
+                                'name'   => 'CaptchaCookie',
+                                'value'  => password_hash(get_setting('cron_key'), PASSWORD_DEFAULT),
+                                'expire' => '7890000',
+                                'domain' => $_SERVER['SERVER_NAME'],
+                                'path'   => '/',
+                                'secure' => false
+                            );
+                            set_cookie($cookie);
+                        }
                         if ($this->session->userdata('user_type') == 1) {
                             redirect('dashboard');
                         } elseif ($this->session->userdata('user_type') == 2) {
