@@ -698,5 +698,10 @@ $lang = array(
 
     // Types
     'true'                                         => 'True',
-    'false'                                        => 'False'
+    'false'                                        => 'False',
+
+    'branch'                                       => 'Branch',
+    'branches'                                     => 'Branches',
+    'branch_form'                                  => 'Branch from',
+    'branch_already_exists'                        => 'Branch already exists!'
 );

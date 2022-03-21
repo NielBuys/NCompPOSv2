@@ -142,6 +142,7 @@
                         <li><?php echo anchor('item_lookups/index', trans('item_lookups')); ?></li>
                         -->
                         <li><?php echo anchor('payment_methods/index', trans('payment_methods')); ?></li>
+                        <li><?php echo anchor('branches/index', trans('branches')); ?></li>
                         <li><?php echo anchor('tax_rates/index', trans('tax_rates')); ?></li>
                         <li><?php echo anchor('users/index', trans('user_accounts')); ?></li>
                         <li class="divider hidden-xs hidden-sm"></li>
