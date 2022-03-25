@@ -72,13 +72,13 @@
                 <div class="form-group">
                     <label for="from_name"><?php _trans('from_name'); ?></label>
                     <input type="text" name="from_name" id="from_name" class="form-control"
-                           value="<?php _htmlsc($invoice->user_name); ?>">
+                           value="<?php _htmlsc(get_setting('invoice_quote_name', null)); ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="from_email"><?php _trans('from_email'); ?></label>
                     <input type="email" name="from_email" id="from_email" class="form-control"
-                           value="<?php echo $invoice->user_email; ?>">
+                           value="<?php echo get_setting('invoice_quote_email', null); ?>">
                 </div>
 
                 <div class="form-group">

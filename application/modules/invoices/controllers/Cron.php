@@ -99,7 +99,7 @@ class Cron extends Base_Controller
 
                 $from = !empty($tpl->email_template_from_email) ?
                     array($tpl->email_template_from_email, $tpl->email_template_from_name) :
-                    array($invoice->user_email, "");
+                    array(get_setting('invoice_quote_email', null), "");
 
                 $subject = !empty($tpl->email_template_subject) ?
                     $tpl->email_template_subject :
