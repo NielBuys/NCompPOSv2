@@ -13,7 +13,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * Class mdl_Branches
  */
-class mdl_branches extends Response_Model
+class Mdl_branches extends Response_Model
 {
     public $table = 'ip_branches';
     public $primary_key = 'ip_branches.branch_id';

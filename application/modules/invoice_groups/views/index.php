@@ -25,6 +25,7 @@
                 <th><?php _trans('name'); ?></th>
                 <th><?php _trans('next_id'); ?></th>
                 <th><?php _trans('left_pad'); ?></th>
+                <th><?php _trans('branch'); ?></th>
                 <th><?php _trans('options'); ?></th>
             </tr>
             </thead>
@@ -35,6 +36,7 @@
                     <td><?php _htmlsc($invoice_group->invoice_group_name); ?></td>
                     <td><?php echo $invoice_group->invoice_group_next_id; ?></td>
                     <td><?php echo $invoice_group->invoice_group_left_pad; ?></td>
+                    <td><?php echo $invoice_group->branch_name; ?></td>
                     <td>
                         <div class="options btn-group">
                             <a class="btn btn-default btn-sm dropdown-toggle"

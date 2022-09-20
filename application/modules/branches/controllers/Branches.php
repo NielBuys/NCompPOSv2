@@ -8,11 +8,11 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
  * @license		https://invoiceplane.com/license.txt
  * @link		https://invoiceplane.com
  */
- 
+
 /**
  * Class Branches
  */
-class branches extends Admin_Controller
+class Branches extends Admin_Controller
 {
     /**
      * Branches constructor.

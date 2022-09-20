@@ -49,6 +49,21 @@
                            value="<?php echo $this->mdl_invoice_groups->form_value('invoice_group_left_pad'); ?>">
                 </div>
 
+                <div class="form-group">
+                    <label class="control-label" for="invoice_group_branch_id">
+                        <?php _trans('branch'); ?>
+                    </label>
+                    <select name="invoice_group_branch_id" class="form-control input-sm">
+                        <option value="0"><?php _trans('none'); ?></option>
+                        <?php foreach ($branches as $branch) { ?>
+                            <option value="<?php echo $branch->branch_id; ?>"
+                                <?php check_select($branch->branch_id, $this->mdl_invoice_groups->form_value('invoice_group_branch_id')); ?>>
+                                <?php echo $branch->branch_name ; ?>
+                            </option>
+                        <?php } ?>
+                    </select>
+                </div>
+
                 <hr>
 
                 <div class="form-group no-margin">

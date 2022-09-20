@@ -28,6 +28,11 @@ class Mdl_Invoice_Groups extends Response_Model
         $this->db->order_by('ip_invoice_groups.invoice_group_name');
     }
 
+    public function default_join()
+    {
+        $this->db->join('ip_branches', 'ip_invoice_groups.invoice_group_branch_id = ip_branches.branch_id', 'left');
+    }
+
     /**
      * @return array
      */

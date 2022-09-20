@@ -43,6 +43,7 @@ class Invoice_Groups extends Admin_Controller
      */
     public function form($id = null)
     {
+        $this->load->model('branches/mdl_branches');
         if ($this->input->post('btn_cancel')) {
             redirect('invoice_groups');
         }
@@ -61,6 +62,11 @@ class Invoice_Groups extends Admin_Controller
             $this->mdl_invoice_groups->set_form_value('invoice_group_next_id', 1);
         }
 
+        $this->layout->set(
+            [
+                'branches' => $this->mdl_branches->get()->result(),
+            ]
+        );
         $this->layout->buffer('content', 'invoice_groups/form');
         $this->layout->render();
     }
