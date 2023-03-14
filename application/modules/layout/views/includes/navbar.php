@@ -98,6 +98,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><?php echo anchor('reports/invoice_aging', trans('invoice_aging')); ?></li>
+                        <li><?php echo anchor('reports/invoice_list', trans('invoice_list')); ?></li>
                         <li><?php echo anchor('reports/payment_history', trans('payment_history')); ?></li>
                         <li><?php echo anchor('reports/sales_by_client', trans('sales_by_client')); ?></li>
                         <li><?php echo anchor('reports/sales_by_year', trans('sales_by_date')); ?></li>

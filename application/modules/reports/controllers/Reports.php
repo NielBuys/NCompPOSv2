@@ -44,6 +44,25 @@ class Reports extends Admin_Controller
         $this->layout->buffer('content', 'reports/sales_by_client_index')->render();
     }
 
+    public function invoice_list()
+    {
+        if ($this->input->post('btn_submit')) {
+            $data = array(
+                'results' => $this->mdl_reports->invoice_list($this->input->post('from_date'), $this->input->post('to_date')),
+                'from_date' => $this->input->post('from_date'),
+                'to_date' => $this->input->post('to_date'),
+            );
+
+            $html = $this->load->view('reports/invoice_list', $data, true);
+
+            $this->load->helper('mpdf');
+
+            pdf_create($html, trans('invoice_list'), true);
+        }
+
+        $this->layout->buffer('content', 'reports/invoice_list_index')->render();
+    }
+
     public function payment_history()
     {
         if ($this->input->post('btn_submit')) {
