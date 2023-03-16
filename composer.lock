@@ -4,48 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb95c7d8d352b58d7d3282f740e4306f",
+    "content-hash": "acb952d69a845cfabf8095d2f0df3516",
     "packages": [
-        {
-            "name": "codeigniter/framework",
-            "version": "3.1.13",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bcit-ci/CodeIgniter.git",
-                "reference": "bcb17eb8ba53a85de154439d0ab8ff1bed047bc9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bcit-ci/CodeIgniter/zipball/bcb17eb8ba53a85de154439d0ab8ff1bed047bc9",
-                "reference": "bcb17eb8ba53a85de154439d0ab8ff1bed047bc9",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.7"
-            },
-            "require-dev": {
-                "mikey179/vfsstream": "1.6.*",
-                "phpunit/phpunit": "4.* || 5.* || 9.*"
-            },
-            "suggest": {
-                "paragonie/random_compat": "Provides better randomness in PHP 5.x"
-            },
-            "type": "project",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "The CodeIgniter framework",
-            "homepage": "https://codeigniter.com",
-            "support": {
-                "forum": "http://forum.codeigniter.com/",
-                "issues": "https://github.com/bcit-ci/CodeIgniter/issues",
-                "slack": "https://codeigniterchat.slack.com",
-                "source": "https://github.com/bcit-ci/CodeIgniter",
-                "wiki": "https://github.com/bcit-ci/CodeIgniter/wiki"
-            },
-            "time": "2022-03-03T13:21:49+00:00"
-        },
         {
             "name": "guzzle/guzzle",
             "version": "v3.9.3",
@@ -397,6 +357,45 @@
                 }
             ],
             "time": "2023-03-08T13:26:56+00:00"
+        },
+        {
+            "name": "nielbuys/framework",
+            "version": "3.1.13.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NielBuys/CodeIgniter.git",
+                "reference": "cae58c4ad9e74c91e449f2ef1bc9569d35c8f21d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NielBuys/CodeIgniter/zipball/cae58c4ad9e74c91e449f2ef1bc9569d35c8f21d",
+                "reference": "cae58c4ad9e74c91e449f2ef1bc9569d35c8f21d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.7"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "1.6.*",
+                "phpunit/phpunit": "4.* || 5.* || 9.*"
+            },
+            "suggest": {
+                "paragonie/random_compat": "Provides better randomness in PHP 5.x"
+            },
+            "type": "project",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "The CodeIgniter framework",
+            "homepage": "https://codeigniter.com",
+            "support": {
+                "forum": "http://forum.codeigniter.com/",
+                "slack": "https://codeigniterchat.slack.com",
+                "source": "https://github.com/bcit-ci/CodeIgniter",
+                "wiki": "https://github.com/bcit-ci/CodeIgniter/wiki"
+            },
+            "time": "2023-03-16T07:11:54+00:00"
         },
         {
             "name": "omnipay/2checkout",

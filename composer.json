@@ -10,7 +10,7 @@
     "mpdf/mpdf": "8.*",
     "vlucas/phpdotenv": "^2.4",
     "setasign/fpdi-fpdf": "2.*",
-    "codeigniter/framework": "3.*",
+    "nielbuys/framework": "3.*",
     "league/omnipay": "~2.0",
     "paragonie/random_compat": "^2.0"
   }

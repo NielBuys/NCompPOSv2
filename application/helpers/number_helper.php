@@ -25,11 +25,11 @@ function format_currency($amount)
     $decimal_point = $CI->mdl_settings->setting('decimal_point');
 
     if ($currency_symbol_placement == 'before') {
-        return $currency_symbol . number_format($amount, ($decimal_point) ? 2 : 0, $decimal_point, $thousands_separator);
+        return $currency_symbol . number_format(floatval($amount), ($decimal_point) ? 2 : 0, $decimal_point, $thousands_separator);
     } elseif ($currency_symbol_placement == 'afterspace') {
-        return number_format($amount, ($decimal_point) ? 2 : 0, $decimal_point, $thousands_separator) . '&nbsp;' . $currency_symbol;
+        return number_format(floatval($amount), ($decimal_point) ? 2 : 0, $decimal_point, $thousands_separator) . '&nbsp;' . $currency_symbol;
     } else {
-        return number_format($amount, ($decimal_point) ? 2 : 0, $decimal_point, $thousands_separator) . $currency_symbol;
+        return number_format(floatval($amount), ($decimal_point) ? 2 : 0, $decimal_point, $thousands_separator) . $currency_symbol;
     }
 }
 

@@ -37,6 +37,7 @@ require dirname(__FILE__) . '/Base.php';
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  **/
+#[AllowDynamicProperties]
 class MX_Controller
 {
 
@@ -44,7 +45,7 @@ class MX_Controller
 
     public function __construct()
     {
-        $class = str_replace(CI::$APP->config->item('controller_suffix'), '', get_class($this));
+        $class = str_replace(CI::$APP->config->item('controller_suffix') ?? '', '', get_class($this));
         log_message('debug', $class . " MX_Controller Initialized");
         Modules::$registry[strtolower($class)] = $this;
 
