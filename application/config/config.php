@@ -450,7 +450,7 @@ $config['sess_regenerate_destroy'] = FALSE;
 $config['cookie_prefix'] = '';
 $config['cookie_domain'] = '';
 $config['cookie_path'] = '/';
-$config['cookie_secure'] = env('COOKIE_SECURE', false);
+$config['cookie_secure'] = env_bool('COOKIE_SECURE', false);
 $config['cookie_httponly'] = FALSE;
 
 /*
@@ -495,7 +495,7 @@ $config['global_xss_filtering'] = FALSE;
 | 'csrf_regenerate' = Regenerate token on every submission
 | 'csrf_exclude_uris' = Array of URIs which ignore CSRF checks
 */
-$config['csrf_protection'] = env('CSRF_PROTECTION', true);
+$config['csrf_protection'] = env_bool('CSRF_PROTECTION', true);
 $config['csrf_token_name'] = '_ip_csrf';
 $config['csrf_cookie_name'] = 'ip_csrf_cookie';
 $config['csrf_expire'] = 3600;
