@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html style="display:table;width:100%;">
 <head>
     <meta charset="utf-8">
-    <title>InvoicePlane - <?php echo $heading; ?></title>
+    <title>NCompPOS - <?php echo $heading; ?></title>
     <style>
         html,
         html * {
