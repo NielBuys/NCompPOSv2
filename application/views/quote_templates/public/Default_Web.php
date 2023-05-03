@@ -104,7 +104,7 @@
                 <div class="col-lg-2"></div>
                 <div class="col-xs-12 col-md-6 col-lg-5 text-right">
 
-                    <h4><?php _htmlsc($quote->client_name); ?></h4>
+                    <h4><?php _htmlsc(format_client($quote)); ?></h4>
                     <p><?php if ($quote->client_vat_id) {
                             echo lang("vat_id_short") . ": " . $quote->client_vat_id . '<br>';
                         } ?>
