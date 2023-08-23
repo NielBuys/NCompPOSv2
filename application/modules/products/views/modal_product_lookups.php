@@ -52,8 +52,10 @@
         // Reset the form
         $('#product-reset-button').click(function () {
             var product_table = $('#product-lookup-table');
+            var filter_button = $('#filter-button');
 
-            product_table.html('<h2 class="text-center"><i class="fa fa-spin fa-spinner"></i></h2>');
+            var filter_button_html = filter_button.html();
+            filter_button.html('<i class="fa fa-spin fa-spinner"></i>');
 
             var lookup_url = "<?php echo site_url('products/ajax/modal_product_lookups'); ?>/";
             lookup_url += Math.floor(Math.random() * 1000) + '/?';
@@ -63,6 +65,7 @@
             window.setTimeout(function () {
                 product_table.load(lookup_url);
             }, 250);
+            filter_button.html(filter_button_html);
         });
 
         // Filter on search button click
@@ -80,8 +83,10 @@
             var filter_family = $('#filter_family').val();
             var filter_product = $('#filter_product').val();
             var product_table = $('#product-lookup-table');
+            var filter_button = $('#filter-button');
 
-            product_table.html('<h2 class="text-center"><i class="fa fa-spin fa-spinner"></i></h2>');
+            var filter_button_html = filter_button.html();
+            filter_button.html('<i class="fa fa-spin fa-spinner"></i>');
 
             var lookup_url = "<?php echo site_url('products/ajax/modal_product_lookups'); ?>/";
             lookup_url += Math.floor(Math.random() * 1000) + '/?';
@@ -98,6 +103,7 @@
             window.setTimeout(function () {
                 product_table.load(lookup_url);
             }, 250);
+            filter_button.html(filter_button_html);
         }
 
         // Bind enter to product search if search field is focused
