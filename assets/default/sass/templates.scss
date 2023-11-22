@@ -61,6 +61,22 @@ header {
   margin: 20px 0;
 }
 
+.statement-title {
+  color: $color_primary;
+  font-size: 1.7em;
+  line-height: 1.4em;
+  font-weight: normal;
+  margin: 0px 0px 10px 0px;
+}
+
+.statement-date {
+  color: $color_primary;
+  font-size: 1.1em;
+  line-height: 1.4em;
+  font-weight: normal;
+  margin: 5px 0px 10px 0px;
+}
+
 #company {
   float: right;
   text-align: right;

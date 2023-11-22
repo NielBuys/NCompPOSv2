@@ -258,3 +258,104 @@ function generate_quote_pdf($quote_id, $stream = true, $quote_template = null)
 
     return pdf_create($html, trans('quote') . '_' . str_replace(array('\\', '/'), '_', $quote->quote_number), $stream, $quote->quote_password);
 }
+
+/**
+ * Generate the PDF for an client statement
+ *
+ * @param $client_id
+ * @param bool $stream
+ * @param null $statement_template
+ * @param null $is_guest
+ * @return string
+ */
+function generate_client_statement_pdf($client_id, $stream = true, $statement_template = null, $is_guest = null)
+{
+    $CI = &get_instance();
+
+    $CI->load->model('clients/mdl_client_transactions');
+    $CI->load->model('clients/mdl_clients');
+
+    $CI->load->helper('country');
+
+    $transactions = $CI->mdl_client_transactions->get_client_transactions($client_id);
+
+    $client = $CI->mdl_clients->get_by_id($client_id);
+
+    if (!$statement_template) {
+        $statement_template = $CI->mdl_settings->setting('pdf_statement_template','Default');
+    }
+
+//    $CI->load->model('payments/mdl_payments');
+
+
+
+    // $CI->load->helper('country');
+    // $CI->load->helper('client');
+
+    // $invoice = $CI->mdl_invoices->get_by_id($invoice_id);
+    // $invoice = $CI->mdl_invoices->get_payments($invoice);
+
+    // // Override language with system language
+    // set_language($invoice->client_language);
+
+    // if (!$invoice_template) {
+    //     $CI->load->helper('template');
+    //     $invoice_template = select_pdf_invoice_template($invoice);
+    // }
+
+    // $payment_method = $CI->mdl_payment_methods->where('payment_method_id', $invoice->payment_method)->get()->row();
+    // if ($invoice->payment_method == 0) {
+    //     $payment_method = false;
+    // }
+
+    // // Determine if discounts should be displayed
+    // $items = $CI->mdl_items->where('invoice_id', $invoice_id)->get()->result();
+
+    // // Discount settings
+    // $show_item_discounts = false;
+    // foreach ($items as $item) {
+    //     if ($item->item_discount != '0.00') {
+    //         $show_item_discounts = true;
+    //     }
+    // }
+
+    // // Get all custom fields
+    // $custom_fields = array(
+    //     'invoice' => $CI->mdl_custom_fields->get_values_for_fields('mdl_invoice_custom', $invoice->invoice_id),
+    //     'client' => $CI->mdl_custom_fields->get_values_for_fields('mdl_client_custom', $invoice->client_id),
+    //     'user' => $CI->mdl_custom_fields->get_values_for_fields('mdl_user_custom', $invoice->user_id),
+    // );
+
+    // if ($invoice->quote_id) {
+    //     $custom_fields['quote'] = $CI->mdl_custom_fields->get_values_for_fields('mdl_quote_custom', $invoice->quote_id);
+    // }
+
+    // // PDF associated files
+    // $include_zugferd = $CI->mdl_settings->setting('include_zugferd');
+
+    // if ($include_zugferd) {
+    //     $CI->load->helper('zugferd');
+
+    //     $associatedFiles = array(
+    //         array(
+    //             'name' => 'ZUGFeRD-invoice.xml',
+    //             'description' => 'ZUGFeRD Invoice',
+    //             'AFRelationship' => 'Alternative',
+    //             'mime' => 'text/xml',
+    //             'path' => generate_invoice_zugferd_xml_temp_file($invoice, $items)
+    //         )
+    //     );
+    // } else {
+    //     $associatedFiles = null;
+    // }
+
+    $data = array(
+        'client' => $client,
+        'transactions' => $transactions,
+     );
+
+    $html = $CI->load->view('statement_templates/pdf/' . $statement_template, $data, true);
+
+    $CI->load->helper('mpdf');
+    return pdf_create($html, trans('statement'), $stream);
+}

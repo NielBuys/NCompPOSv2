@@ -254,4 +254,16 @@ class Clients extends Admin_Controller
         redirect('clients');
     }
 
+    /**
+     * @param $client_id
+     * @param bool $stream
+     * @param null $statement_template
+     */
+    public function generate_statement_pdf($client_id, $stream = true, $statement_template = null)
+    {
+        $this->load->helper('pdf');
+
+        generate_client_statement_pdf($client_id, $stream, $statement_template, null);
+    }
+
 }

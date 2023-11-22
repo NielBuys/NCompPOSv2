@@ -59,6 +59,10 @@ foreach ($custom_fields as $custom_field) {
                class="btn btn-default">
                 <i class="fa fa-edit"></i> <?php _trans('edit'); ?>
             </a>
+            <a href="<?php echo site_url('clients/generate_statement_pdf/' . $client->client_id); ?>"
+               class="btn btn-default">
+                <i class="fa fa-file-pdf-o"></i> <?php _trans('statement'); ?>
+            </a>
             <a class="btn btn-danger"
                href="<?php echo site_url('clients/delete/' . $client->client_id); ?>"
                onclick="return confirm('<?php _trans('delete_client_warning'); ?>');">
