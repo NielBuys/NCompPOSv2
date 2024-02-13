@@ -233,7 +233,7 @@ class Mdl_Invoices extends Response_Model
                 'item_product_unit_id' => $invoice_item->item_product_unit_id,
             );
 
-            if (!$copy_recurring_items_only || $invoice_item->item_is_recurring) {
+            if (!$copy_recurring_items_only || is_null($invoice_item->item_is_recurring) || $invoice_item->item_is_recurring) {
                 $this->mdl_items->save(null, $db_array);
             }
         }
