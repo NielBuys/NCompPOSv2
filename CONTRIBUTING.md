@@ -83,3 +83,12 @@ After that there are two commands available for development:
   * `grunt build` This command is used to compile all assets for the production use. It
                   also minifies all assets to make sure pages load faster. Normally this
                   command is not used for development.
+
+#### Pull dev-develop codeigniter for testing
+
+Insert the following into Composer.json. And remove composer line at require tag.
+  "require-dev": {
+    "nielbuys/framework": "dev-develop"
+  }
+
+Then run composer update
