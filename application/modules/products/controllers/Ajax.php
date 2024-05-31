@@ -19,19 +19,19 @@ class Ajax extends Admin_Controller
 
     public function modal_product_lookups()
     {
-        $filter_product = $this->input->get('filter_product');
-        $filter_family = $this->input->get('filter_family');
-        $reset_table = $this->input->get('reset_table');
+        $filter_product = $this->input->get('filter_product',true);
+        $filter_family = $this->input->get('filter_family',true);
+        $reset_table = $this->input->get('reset_table',true);
 
         $this->load->model('mdl_products');
         $this->load->model('families/mdl_families');
 
         if (!empty($filter_family)) {
-            $this->mdl_products->by_family($this->security->xss_clean($filter_family));
+            $this->mdl_products->by_family($filter_family);
         }
 
         if (!empty($filter_product)) {
-            $this->mdl_products->by_product($this->security->xss_clean($filter_product));
+            $this->mdl_products->by_product($filter_product);
         }
 
         $products = $this->mdl_products->get()->result();

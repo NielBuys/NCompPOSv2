@@ -30,6 +30,8 @@
           rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/core/css/custom.css" rel="stylesheet">
 
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
 </head>
 
 <body>
@@ -63,6 +65,33 @@
                 <input type="text" name="email" id="email" class="form-control"
                        placeholder="<?php _trans('email'); ?>" required autofocus>
             </div>
+
+            <?php
+            $this->load->helper('cookie');
+            if (env('RECAPTCHA_SITEKEY') != '')
+            {
+                if (is_null(get_cookie('CaptchaCookie'))) 
+                {
+                    $showCaptcha = true;
+                }
+                elseif (password_verify ( get_setting('cron_key') , get_cookie('CaptchaCookie') ) === false)
+                {
+                    $showCaptcha = true;                
+                }
+                else
+                {
+                    $showCaptcha = false;                    
+                }
+                if ($showCaptcha) 
+                {
+                ?>
+                    <div class="form-group">
+        	           <div class="g-recaptcha" data-sitekey="<?php echo env('RECAPTCHA_SITEKEY'); ?>"></div>
+                    </div>
+                <?php
+                }
+            }
+            ?>
 
             <input type="hidden" name="btn_reset" value="true">
 

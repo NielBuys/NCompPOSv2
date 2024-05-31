@@ -122,6 +122,9 @@ class Mailer extends Admin_Controller
      */
     public function send_invoice($invoice_id)
     {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('to_email', 'Email', 'required|valid_email|xss_clean');
+        
         if ($this->input->post('btn_cancel')) {
             redirect('invoices/view/' . $invoice_id);
         }
@@ -130,7 +133,7 @@ class Mailer extends Admin_Controller
             return;
         }
 
-        $to = $this->input->post('to_email');
+        $to = $this->input->post('to_email', true);
 
         if (empty($to)) {
             $this->session->set_flashdata('alert_danger', trans('email_to_address_missing'));
@@ -143,7 +146,7 @@ class Mailer extends Admin_Controller
             $this->input->post('from_name')
         );
 
-        $pdf_template = $this->input->post('pdf_template');
+        $pdf_template = $this->input->post('pdf_template', true);
         $subject = $this->input->post('subject');
         $body = $this->input->post('body');
 

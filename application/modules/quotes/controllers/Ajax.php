@@ -24,7 +24,7 @@ class Ajax extends Admin_Controller
         $this->load->model('quotes/mdl_quotes');
         $this->load->model('units/mdl_units');
 
-        $quote_id = $this->input->post('quote_id');
+        $quote_id = $this->input->post('quote_id', true);
 
         $this->mdl_quotes->set_id($quote_id);
 
@@ -73,8 +73,8 @@ class Ajax extends Admin_Controller
                 'quote_date_created' => date_to_mysql($this->input->post('quote_date_created')),
                 'quote_date_expires' => date_to_mysql($this->input->post('quote_date_expires')),
                 'quote_status_id' => $quote_status_id,
-                'quote_password' => $this->input->post('quote_password'),
-                'notes' => $this->input->post('notes'),
+                'quote_password' => $this->input->post('quote_password',true),
+                'notes' => $this->input->post('notes',true),
                 'quote_discount_amount' => standardize_amount($quote_discount_amount),
                 'quote_discount_percent' => standardize_amount($quote_discount_percent),
             ];
@@ -180,8 +180,8 @@ class Ajax extends Admin_Controller
         $this->load->model('clients/mdl_clients');
 
         $data = [
-            'client_id' => $this->input->post('client_id'),
-            'quote_id' => $this->security->xss_clean($this->input->post('quote_id')),
+            'client_id' => $this->input->post('client_id',true),
+            'quote_id' => $this->input->post('quote_id',true),
             'clients' => $this->mdl_clients->get_latest(),
         ];
 
