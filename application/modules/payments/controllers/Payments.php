@@ -65,6 +65,7 @@ class Payments extends Admin_Controller
             redirect('payments');
         }
 
+        $this->load->model('custom_fields/mdl_payment_custom');
         if (!$this->input->post('btn_submit')) {
             $prep_form = $this->mdl_payments->prep_form($id);
 
@@ -72,7 +73,6 @@ class Payments extends Admin_Controller
                 show_404();
             }
 
-            $this->load->model('custom_fields/mdl_payment_custom');
             $this->load->model('custom_values/mdl_custom_values');
 
             $payment_custom = $this->mdl_payment_custom->where('payment_id', $id)->get();
