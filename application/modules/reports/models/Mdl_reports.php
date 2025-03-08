@@ -118,12 +118,13 @@ class Mdl_Reports extends CI_Model
         if ($from_date and $to_date) {
             $from_date = date_to_mysql($from_date);
             $to_date = date_to_mysql($to_date);
-
+        
             $this->mdl_invoices->where('invoice_date_created >=', $from_date);
             $this->mdl_invoices->where('invoice_date_created <=', $to_date);
-            $this->mdl_invoices->order_by('invoice_date_created');
         }
-
+        
+        $this->mdl_invoices->order_by('invoice_date_created', 'DESC');
+        
         return $this->mdl_invoices->get()->result();
     }
 
