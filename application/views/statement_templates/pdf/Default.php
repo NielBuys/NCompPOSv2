@@ -108,11 +108,23 @@
             <th class="item-name"><?php _trans('date'); ?></th>
             <th class="item-name"><?php _trans('transaction'); ?></th>
             <th class="item-name"><?php _trans('reference'); ?></th>
-            <th class="item-name"><?php _trans('debits'); ?></th>
-            <th class="item-name"><?php _trans('credits'); ?></th>
+            <th class="item-name" style="text-align: right"><?php _trans('debits'); ?></th>
+            <th class="item-name" style="text-align: right"><?php _trans('credits'); ?></th>
         </tr>
         </thead>
         <tbody>
+
+        <tr>
+            <td><?php echo date_from_mysql($lastDaySixMonthsAgo, true); ?></td>
+            <td><?php echo _trans('Balance brought forward'); ?></td>
+            <td>&nbsp</td>
+            <td class="text-right">
+                <?php echo (format_currency($balanceBroughtFwd)); ?>
+            </td>
+            <td class="text-right">
+                <?php echo (format_currency($balanceBroughtFwd)); ?>
+            </td>
+        </tr>
 
         <?php
         foreach ($transactions as $transaction) { ?>
@@ -121,10 +133,10 @@
                 <td><?php echo _trans($transaction->transaction); ?></td>
                 <td><?php _htmlsc($transaction->transaction_number); ?></td>
                 <td class="text-right">
-                    <?php echo format_currency($transaction->amount); ?>
+                    <?php echo ($transaction->transaction=='invoice')?format_currency($transaction->amount):""; ?>
                 </td>
                 <td class="text-right">
-                    <?php echo format_currency($transaction->amount); ?>
+                    <?php echo ($transaction->transaction=='payment')?format_currency($transaction->amount):""; ?>
                 </td>
             </tr>
         <?php } ?>
