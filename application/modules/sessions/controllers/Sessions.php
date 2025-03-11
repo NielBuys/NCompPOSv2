@@ -46,8 +46,6 @@ class Sessions extends Base_Controller
                     $captcha = $this->input->post('g-recaptcha-response');
                     $ip = $_SERVER['REMOTE_ADDR'];
 	               $secretkey = env('RECAPTCHA_SECRETKEY');
-//	               $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretkey."&response=".$captcha."&remoteip=".$ip);
-
                    $url = "https://www.google.com/recaptcha/api/siteverify?secret=".$secretkey."&response=".$captcha."&remoteip=".$ip;
                    $ch = curl_init();
                    curl_setopt($ch, CURLOPT_URL, $url);
@@ -91,9 +89,11 @@ class Sessions extends Base_Controller
                                 'expire' => '7890000',
                                 'domain' => $_SERVER['SERVER_NAME'],
                                 'path'   => '/',
-                                'secure' => false
+                                'secure' => false,
+                                'samesite' => 'Strict',
+                                'httponly' => true
                             );
-                            set_cookie($cookie);
+                            $this->input->set_cookie($cookie);
                         }
                         if ($this->session->userdata('user_type') == 1) {
                             redirect('dashboard');
@@ -145,6 +145,11 @@ class Sessions extends Base_Controller
     {
         // Check if a token was provided
         if ($token) {
+            if(preg_match('/[^a-z_\-0-9]/i', $token)) {
+                log_message('error', 'Incoming token is not alphanumeric ' . $token);
+                redirect('/');
+            }
+
             $this->db->where('user_passwordreset_token', $token);
             $user = $this->db->get('ip_users');
             $user = $user->row();
@@ -163,10 +168,48 @@ class Sessions extends Base_Controller
             return $this->load->view('session_new_password', $formdata);
         }
 
+        if ($this->input->post('btn_new_password') || $this->input->post('btn_reset'))
+        {
+            /// reCaptcha
+            $this->load->helper('cookie');
+            $testCaptcha = false;
+            if (env('RECAPTCHA_SITEKEY') != '')
+            {
+                if (is_null(get_cookie('CaptchaCookie')))
+                {
+                    $testCaptcha = true;
+                }
+                elseif (password_verify ( get_setting('cron_key') , get_cookie('CaptchaCookie') ) === false)
+                {
+                    $testCaptcha = true;
+                }
+                if ($testCaptcha)
+                {
+                    $captcha = $this->input->post('g-recaptcha-response');
+                    $ip = $_SERVER['REMOTE_ADDR'];
+                    $secretkey = env('RECAPTCHA_SECRETKEY');
+                    $url = "https://www.google.com/recaptcha/api/siteverify?secret=".$secretkey."&response=".$captcha."&remoteip=".$ip;
+                    $ch = curl_init();
+                    curl_setopt($ch, CURLOPT_URL, $url);
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                    $response = curl_exec($ch);
+                    curl_close($ch);
+
+                    $responseKeys = json_decode($response,true);
+
+                    if(intval($responseKeys["success"]) !== 1) {
+                        $this->session->set_flashdata('alert_error', trans('loginalert_captcha'));
+                        redirect($_SERVER['HTTP_REFERER']);
+                    }
+                }
+            }
+            /// end of recaptcha
+        }
+
         // Check if the form for a new password was used
         if ($this->input->post('btn_new_password')) {
-            $new_password = $this->input->post('new_password');
-            $user_id = $this->input->post('user_id');
+            $new_password = $this->input->post('new_password', true);
+            $user_id = $this->input->post('user_id', true);
 
             if (empty($user_id) || empty($new_password)) {
                 $this->session->set_flashdata('alert_error', trans('loginalert_no_password'));
@@ -208,6 +251,7 @@ class Sessions extends Base_Controller
 
         // Check if the password reset form was used
         if ($this->input->post('btn_reset')) {
+
             $email = $this->input->post('email');
 
             if (empty($email)) {

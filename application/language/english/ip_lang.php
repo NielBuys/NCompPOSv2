@@ -43,6 +43,7 @@ $lang = array(
     'boolean'                                      => 'Boolean',
     'bill_to'                                      => 'Bill To',
     'body'                                         => 'Body',
+    'both_from_date_and_to_date_are_required'      => 'Both From Date and To Date are required',
     'change_client'                                => 'Change Client',
     'calculate_discounts'                          => 'Calculate Discounts',
     'calendar_day_1'                               => '1 Day',

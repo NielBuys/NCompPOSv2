@@ -38,6 +38,10 @@ ENABLE_INVOICE_DELETION=false
 # Disable the read-only mode for invoices
 DISABLE_READ_ONLY=false
 
+# reCaptcha Cookie details. (Will show on first login a reCaptcha, if Keys are set)
+RECAPTCHA_SITEKEY=
+RECAPTCHA_SECRETKEY=
+
 ##
 ## DO NOT CHANGE ANY CONFIGURATION VALUES BELOW THIS LINE!
 ## =======================================================
@@ -49,7 +53,3 @@ ENCRYPTION_CIPHER=AES-256
 
 # Set to true after the initial setup
 SETUP_COMPLETED=false
-
-# reCaptcha Cookie details. (Will show on first login a reCaptcha, if Keys are set)
-RECAPTCHA_SITEKEY=
-RECAPTCHA_SECRETKEY=

@@ -39,11 +39,12 @@ class Mdl_Clients extends Response_Model
             'client_name' => array(
                 'field' => 'client_name',
                 'label' => trans('client_name'),
-                'rules' => 'required'
+                'rules' => 'required|trim'
             ),
             'client_surname' => array(
                 'field' => 'client_surname',
-                'label' => trans('client_surname')
+                'label' => trans('client_surname'),
+                'rules' => 'trim'
             ),
             'client_active' => array(
                 'field' => 'client_active'
@@ -51,6 +52,7 @@ class Mdl_Clients extends Response_Model
             'client_language' => array(
                 'field' => 'client_language',
                 'label' => trans('language'),
+                'rules' => 'trim'
             ),
             'client_address_1' => array(
                 'field' => 'client_address_1'
@@ -68,7 +70,8 @@ class Mdl_Clients extends Response_Model
                 'field' => 'client_zip'
             ),
             'client_country' => array(
-                'field' => 'client_country'
+                'field' => 'client_country',
+                'rules' => 'trim'
             ),
             'client_phone' => array(
                 'field' => 'client_phone'
