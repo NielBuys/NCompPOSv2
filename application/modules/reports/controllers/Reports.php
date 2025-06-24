@@ -44,24 +44,39 @@ class Reports extends Admin_Controller
         $this->layout->buffer('content', 'reports/sales_by_client_index')->render();
     }
 
-    public function invoice_list()
+public function invoice_list()
     {
+        $this->load->library('form_validation');
+    
+        // Set validation rules
+        $this->form_validation->set_rules('from_date', 'From Date', 'required');
+        $this->form_validation->set_rules('to_date', 'To Date', 'required');
+    
         if ($this->input->post('btn_submit')) {
+            if ($this->form_validation->run() == FALSE) {
+                // If validation fails, redirect back with an error message
+                $this->session->set_flashdata('alert_error', trans('both_from_date_and_to_date_are_required'));
+                redirect($this->uri->uri_string());
+            }
+    
+            // Validation passed, proceed with report generation
+            $from_date = $this->input->post('from_date');
+            $to_date = $this->input->post('to_date');
+    
             $data = array(
-                'results' => $this->mdl_reports->invoice_list($this->input->post('from_date'), $this->input->post('to_date')),
-                'from_date' => $this->input->post('from_date'),
-                'to_date' => $this->input->post('to_date'),
+                'results' => $this->mdl_reports->invoice_list($from_date, $to_date),
+                'from_date' => $from_date,
+                'to_date' => $to_date,
             );
-
+    
             $html = $this->load->view('reports/invoice_list', $data, true);
-
+    
             $this->load->helper('mpdf');
-
             pdf_create($html, trans('invoice_list'), true);
         }
-
+    
         $this->layout->buffer('content', 'reports/invoice_list_index')->render();
-    }
+    }    
 
     public function payment_history()
     {
