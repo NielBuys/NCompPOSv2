@@ -18,7 +18,14 @@
         <div>
             <b><?php _htmlsc(format_client($quote)); ?></b>
         </div>
-        <?php if ($quote->client_vat_id) {
+        <?php 
+        if ($quote->client_ref) {
+            echo '<div>' . $invoice->client_ref . '</div>';
+        }
+        if ($quote->client_contact_name) {
+            echo '<div>' . $invoice->client_contact_name . '</div>';
+        }
+        if ($quote->client_vat_id) {
             echo '<div>' . trans('vat_id_short') . ': ' . $quote->client_vat_id . '</div>';
         }
         if ($quote->client_tax_code) {
