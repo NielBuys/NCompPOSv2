@@ -111,7 +111,10 @@ function phpmail_send(
 
         // Add the CC's
         foreach ($cc as $address) {
-            $mail->addCC($address);
+            $address = trim($address);
+            if (!empty($address)) {
+                $mail->addCC($address);
+            }
         }
     }
 

@@ -83,7 +83,8 @@
 
                 <div class="form-group">
                     <label for="cc"><?php _trans('cc'); ?></label>
-                    <input type="text" name="cc" id="cc" value="" class="form-control">
+                    <input type="text" name="cc" id="cc" 
+                        value="<?php echo $invoice->client_cc_emails; ?>" class="form-control">
                 </div>
 
                 <div class="form-group">

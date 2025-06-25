@@ -98,7 +98,13 @@
                 <div class="col-xs-12 col-md-6 col-lg-5 text-right">
 
                     <h4><?php _htmlsc(format_client($invoice)); ?></h4>
-                    <p><?php if ($invoice->client_vat_id) {
+                    <p> <?php if ($invoice->client_ref) {
+                            echo htmlsc($invoice->client_ref) . '<br>';
+                        } ?>
+                        <?php if ($invoice->client_contact_name) {
+                            echo htmlsc($invoice->client_contact_name) . '<br>';
+                        } ?>
+                        <?php if ($invoice->client_vat_id) {
                             echo lang("vat_id_short") . ": " . $invoice->client_vat_id . '<br>';
                         } ?>
                         <?php if ($invoice->client_tax_code) {

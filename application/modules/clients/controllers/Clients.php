@@ -73,7 +73,8 @@ class Clients extends Admin_Controller
         if ($this->input->post('is_update') == 0 && $this->input->post('client_name') != '') {
             $check = $this->db->get_where('ip_clients', array(
                 'client_name' => $this->input->post('client_name'),
-                'client_surname' => $this->input->post('client_surname')
+                'client_surname' => $this->input->post('client_surname'),
+                'client_surname' => $this->input->post('client_ref')
             ))->result();
 
             if (!empty($check)) {

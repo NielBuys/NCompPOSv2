@@ -53,6 +53,9 @@ function parse_template($object, $body)
                 case 'quote_guest_url':
                     $replace = site_url('guest/view/quote/' . $object->quote_url_key);
                     break;
+                case 'client_contact_name':
+                    $replace = !empty($object->client_contact_name) ? $object->client_contact_name : format_client($object);
+                    break;
                 default:
                     // Check if it's a custom field
                     if (preg_match('/ip_cf_([0-9].*)/', $var, $cf_id)) {

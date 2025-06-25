@@ -105,7 +105,13 @@
                 <div class="col-xs-12 col-md-6 col-lg-5 text-right">
 
                     <h4><?php _htmlsc(format_client($quote)); ?></h4>
-                    <p><?php if ($quote->client_vat_id) {
+                    <p> <?php if ($quote->client_ref) {
+                            echo htmlsc($quote->client_ref) . '<br>';
+                        } ?>
+                        <?php if ($quote->client_contact_name) {
+                            echo htmlsc($quote->client_contact_name) . '<br>';
+                        } ?>
+                        <?php if ($quote->client_vat_id) {
                             echo lang("vat_id_short") . ": " . $quote->client_vat_id . '<br>';
                         } ?>
                         <?php if ($quote->client_tax_code) {

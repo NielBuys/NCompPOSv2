@@ -50,10 +50,17 @@ class Ajax extends Admin_Controller
             ->result();
 
         foreach ($clients as $client) {
+            $display_name = format_client($client);
+
+            if (!empty($client->client_ref)) {
+                $display_name .= ' (' . $client->client_ref . ')';
+            }
+
             $response[] = [
                 'id' => $client->client_id,
-                'text' => htmlsc(format_client($client)),
+                'text' => htmlsc($display_name),
             ];
+
         }
 
         // Return the results

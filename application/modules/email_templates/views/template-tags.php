@@ -13,6 +13,12 @@
                 <option value="{{{client_surname}}}">
                     <?php _trans('client_surname'); ?>
                 </option>
+                <option value="{{{client_contact_name}}}">
+                    <?php _trans('client_contact_name'); ?>
+                </option>
+                <option value="{{{client_ref}}}">
+                    <?php _trans('client_ref'); ?>
+                </option>
                 <option value="{{{client_address_1}}}">
                     <?php _trans('address') . ' 1'; ?>
                 </option>

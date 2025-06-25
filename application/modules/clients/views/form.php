@@ -72,6 +72,14 @@ $cv = $this->controller->view_data['custom_values'];
                                    value="<?php echo $this->mdl_clients->form_value('client_surname', true); ?>">
                         </div>
 
+                        <div class="form-group">
+                            <label for="client_ref">
+                                <?php _trans('client_ref'); ?>
+                            </label>
+                            <input id="client_ref" name="client_ref" type="text" class="form-control"
+                                   value="<?php echo $this->mdl_clients->form_value('client_ref', true); ?>">
+                        </div>
+
                         <div class="form-group no-margin">
                             <label for="client_language">
                                 <?php _trans('language'); ?>
@@ -188,6 +196,14 @@ $cv = $this->controller->view_data['custom_values'];
 
                     <div class="panel-body">
                         <div class="form-group">
+                            <label for="client_phone"><?php _trans('client_contact_name'); ?></label>
+
+                            <div class="controls">
+                                <input type="text" name="client_contact_name" id="client_contact_name" class="form-control"
+                                       value="<?php echo $this->mdl_clients->form_value('client_contact_name', true); ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="client_phone"><?php _trans('phone_number'); ?></label>
 
                             <div class="controls">
@@ -209,8 +225,10 @@ $cv = $this->controller->view_data['custom_values'];
                             <label for="client_mobile"><?php _trans('mobile_number'); ?></label>
 
                             <div class="controls">
-                                <input type="text" name="client_mobile" id="client_mobile" class="form-control"
-                                       value="<?php echo $this->mdl_clients->form_value('client_mobile', true); ?>">
+                                <input type="tel" name="client_mobile" id="client_mobile" class="form-control"
+                                    pattern="^\+[1-9]\d{1,14}$"
+                                    placeholder="e.g. +27821234567"
+                                    value="<?php echo $this->mdl_clients->form_value('client_mobile', true); ?>">
                             </div>
                         </div>
 
@@ -218,8 +236,18 @@ $cv = $this->controller->view_data['custom_values'];
                             <label for="client_email"><?php _trans('email_address'); ?></label>
 
                             <div class="controls">
-                                <input type="text" name="client_email" id="client_email" class="form-control"
+                                <input type="email" name="client_email" id="client_email" class="form-control"
                                        value="<?php echo $this->mdl_clients->form_value('client_email', true); ?>">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="client_cc_emails"><?php _trans('client_cc_emails'); ?></label>
+
+                            <div class="controls">
+                                <input type="text" name="client_cc_emails" id="client_cc_emails" class="form-control"
+                                    placeholder="e.g. user1@example.com, user2@example.com"
+                                    value="<?php echo $this->mdl_clients->form_value('client_cc_emails', true); ?>">
                             </div>
                         </div>
 
@@ -227,8 +255,8 @@ $cv = $this->controller->view_data['custom_values'];
                             <label for="client_web"><?php _trans('web_address'); ?></label>
 
                             <div class="controls">
-                                <input type="text" name="client_web" id="client_web" class="form-control"
-                                       value="<?php echo $this->mdl_clients->form_value('client_web', true); ?>">
+                                <input type="url" name="client_web" id="client_web" class="form-control"
+                                   value="<?php echo $this->mdl_clients->form_value('client_web', true); ?>">
                             </div>
                         </div>
 
