@@ -224,8 +224,22 @@ $(document).ready(function () {
         update_email_template_preview();
     });
 
-    // Fullpage loader
-    $(document).on('click', '.ajax-loader', function () {
+    // Fullpage spinner loader
+    $(document).on('click', '.ajax-loader', function (e) {
+        var $form = $(this).closest('form');
+
+        // Check if form exists and fails native validation
+        if ($form.length && !$form[0].checkValidity()) {
+            // Prevent spinner, stop form submit
+            e.preventDefault();
+            e.stopImmediatePropagation();
+
+            // Optionally show the browser's built-in validation messages
+            $form[0].reportValidity(); // Triggers native error messages
+            return false;
+        }
+
+        // Show spinner if form is valid
         $('#fullpage-loader').fadeIn(200);
         window.fullpageloaderTimeout = window.setTimeout(function () {
             $('#loader-error').fadeIn(200);
@@ -233,6 +247,7 @@ $(document).ready(function () {
         }, 10000);
     });
 
+    // Manual spinner close
     $(document).on('click', '.fullpage-loader-close', function () {
         $('#fullpage-loader').fadeOut(200);
         $('#loader-error').hide();
@@ -253,4 +268,5 @@ $(document).ready(function () {
             }
         });
     }
+
 });

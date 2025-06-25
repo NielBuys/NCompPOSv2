@@ -46,6 +46,11 @@ class Mdl_Clients extends Response_Model
                 'label' => trans('client_surname'),
                 'rules' => 'trim'
             ),
+            'client_ref' => array(
+                'field' => 'client_ref',
+                'label' => trans('client_ref'),
+                'rules' => 'trim'
+            ),
             'client_active' => array(
                 'field' => 'client_active'
             ),
@@ -55,38 +60,60 @@ class Mdl_Clients extends Response_Model
                 'rules' => 'trim'
             ),
             'client_address_1' => array(
-                'field' => 'client_address_1'
+                'field' => 'client_address_1',
+                'rules' => 'trim'
             ),
             'client_address_2' => array(
-                'field' => 'client_address_2'
+                'field' => 'client_address_2',
+                'rules' => 'trim'
             ),
             'client_city' => array(
-                'field' => 'client_city'
+                'field' => 'client_city',
+                'rules' => 'trim'
             ),
             'client_state' => array(
-                'field' => 'client_state'
+                'field' => 'client_state',
+                'rules' => 'trim'
             ),
             'client_zip' => array(
-                'field' => 'client_zip'
+                'field' => 'client_zip',
+                'rules' => 'trim'
             ),
             'client_country' => array(
                 'field' => 'client_country',
                 'rules' => 'trim'
             ),
+            'client_contact_name' => array(
+                'field' => 'client_contact_name',
+                'rules' => 'trim'
+            ),
             'client_phone' => array(
-                'field' => 'client_phone'
+                'field' => 'client_phone',
+                'rules' => 'trim'
             ),
             'client_fax' => array(
-                'field' => 'client_fax'
+                'field' => 'client_fax',
+                'rules' => 'trim'
             ),
             'client_mobile' => array(
-                'field' => 'client_mobile'
+                'field' => 'client_mobile',
+                'label' => trans('mobile_number'),
+                'rules' => 'trim|regex_match[/^\+[1-9]\d{1,14}$/]'
             ),
             'client_email' => array(
-                'field' => 'client_email'
+                'field' => 'client_email',
+                'label' => trans('email_address'),
+                'rules' => 'trim|valid_email'
+            ),
+            'client_cc_emails' => array(
+                'field' => 'client_cc_emails',
+                'label' => trans('client_cc_emails'),
+                'rules' => 'trim|callback_validate_multiple_emails'
             ),
             'client_web' => array(
-                'field' => 'client_web'
+                'field' => 'client_web',
+                'label' => trans('web_address'),
+                'rules' => 'trim|valid_url'
             ),
             'client_vat_id' => array(
                 'field' => 'user_vat_id'
@@ -256,6 +283,24 @@ class Mdl_Clients extends Response_Model
     {
         $this->filter_where('client_active', 1);
         return $this;
+    }
+
+    public function validate_multiple_emails($email_string)
+    {
+        if (trim($email_string) === '') {
+            return true; // Empty field is allowed; add 'required' rule if needed
+        }
+
+        $emails = explode(',', $email_string);
+        foreach ($emails as $email) {
+            $email = trim($email);
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $this->form_validation->set_message('validate_multiple_emails', trans('invalid_email_in_list') . ": " . $email);
+                return false;
+            }
+        }
+
+        return true;
     }
 
 }
