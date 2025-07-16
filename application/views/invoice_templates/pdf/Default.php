@@ -58,7 +58,11 @@
 
         if ($invoice->client_phone) {
             echo '<div>' . trans('phone_abbr') . ': ' . htmlsc($invoice->client_phone) . '</div>';
-        } ?>
+        }
+        if ($invoice->client_email) {
+            echo '<div>' . trans('email_abbr') . ': ' . htmlsc($invoice->client_email) . '</div>';
+        }
+        ?>
 
     </div>
     <div id="company">

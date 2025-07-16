@@ -141,18 +141,6 @@ class Invoices extends Admin_Controller
 
         $this->db->reset_query();
 
-        /*$invoice_custom = $this->mdl_invoice_custom->where('invoice_id', $invoice_id)->get();
-
-        if ($invoice_custom->num_rows()) {
-            $invoice_custom = $invoice_custom->row();
-
-            unset($invoice_custom->invoice_id, $invoice_custom->invoice_custom_id);
-
-            foreach ($invoice_custom as $key => $val) {
-                $this->mdl_invoices->set_form_value('custom[' . $key . ']', $val);
-            }
-        }*/
-
         $fields = $this->mdl_invoice_custom->by_id($invoice_id)->get()->result();
         $invoice = $this->mdl_invoices->get_by_id($invoice_id);
 

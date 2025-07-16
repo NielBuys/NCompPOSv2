@@ -136,6 +136,10 @@
                             echo trans('phone_abbr') . ': ' . htmlsc($quote->client_phone); ?>
                             <br>
                         <?php } ?>
+                        <?php if ($quote->client_email) {
+                            echo trans('email_abbr') . ': ' . htmlsc($quote->client_email); ?>
+                            <br>
+                        <?php } ?>
                     </p>
 
                     <br>

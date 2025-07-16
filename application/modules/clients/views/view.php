@@ -91,6 +91,22 @@ foreach ($custom_fields as $custom_field) {
                         <?php $this->layout->load_view('clients/partial_client_address'); ?>
                     </p>
 
+                    <?php if ($client->client_phone || $client->client_email) : ?>
+                        <hr>
+                    <?php endif; ?>
+                    <?php if ($client->client_phone): ?>
+                        <div>
+                            <?php _trans('phone'); ?>:&nbsp;
+                            <?php _htmlsc($client->client_phone); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($client->client_email): ?>
+                        <div>
+                            <?php _trans('email'); ?>:&nbsp;
+                            <?php _auto_link($client->client_email); ?>
+                        </div>
+                    <?php endif; ?>
+
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6">
 

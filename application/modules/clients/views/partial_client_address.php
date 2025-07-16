@@ -6,13 +6,6 @@
     <?php echo($client->client_contact_name ? htmlsc($client->client_contact_name) . '<br>' : ''); ?>
 </span>
 
-<span class="client_email">
-    <?php echo($client->client_email ? htmlsc($client->client_email) . '<br>' : ''); ?>
-</span>
-<span class="client_phone">
-    <?php echo($client->client_phone ? htmlsc($client->client_phone) . '<br>' : ''); ?>
-</span>
-
 <?php $this->load->helper('country'); ?>
 
 <span class="client-address-street-line">

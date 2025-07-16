@@ -129,6 +129,10 @@
                             echo trans('phone_abbr') . ': ' . htmlsc($invoice->client_phone); ?>
                             <br>
                         <?php } ?>
+                        <?php if ($invoice->client_email) {
+                            echo trans('email_abbr') . ': ' . htmlsc($invoice->client_email); ?>
+                            <br>
+                        <?php } ?>
                     </p>
 
                     <br>

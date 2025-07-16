@@ -61,7 +61,11 @@
 
         if ($quote->client_phone) {
             echo '<div>' . trans('phone_abbr') . ': ' . htmlsc($quote->client_phone) . '</div>';
-        } ?>
+        }
+        if ($quote->client_email) {
+            echo '<div>' . trans('email_abbr') . ': ' . htmlsc($quote->client_email) . '</div>';
+        }
+        ?>
 
     </div>
     <div id="company">
